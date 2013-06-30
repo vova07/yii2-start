@@ -1,8 +1,8 @@
 yii2-blog
 =========
 
-Простой демо блог на Yii 2.
-Рабочий пример можно посмотреть тут: http://yii2-blog.find-freelancer.pro/www/
+- Простой демо блог на Yii 2.
+- Рабочий пример можно посмотреть тут: http://yii2-blog.find-freelancer.pro/www/
 
 Модули
 -----------
