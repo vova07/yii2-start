@@ -33,7 +33,7 @@ class DefaultController extends FController
 	public function actionCreate($returnUrl)
 	{
 		$model = new Comment();
-		if ($model->load($_POST) && $model->validate()) {
+		if ($model->load($_POST)) {
 			if ($model->save()) {
 				return Yii::$app->response->redirect($returnUrl);
 			}
@@ -46,7 +46,7 @@ class DefaultController extends FController
 	{
 		if ($model = Comment::find($id)) {
 			if (Yii::$app->user->checkAccess('editOwnComment', array('comment' => $model)) || Yii::$app->user->checkAccess('editComment')) {
-				if ($model->load($_POST) && $model->validate()) {
+				if ($model->load($_POST)) {
 					if ($model->save())
 						return Yii::$app->response->redirect($returnUrl);
 				} else {

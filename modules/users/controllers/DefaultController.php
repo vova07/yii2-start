@@ -75,7 +75,7 @@ class DefaultController extends FController
 		if ($model = User::findByUsername($username)) {
 			if (Yii::$app->user->checkAccess('editOwnProfile', array('user' => $model)) || Yii::$app->user->checkAccess('editProfile')) {
 				$model->scenario = 'update';
-				if ($model->load($_POST) && $model->validate()) {
+				if ($model->load($_POST)) {
 					if ($model->save()) {
 						Yii::$app->session->setFlash('success');
 						return Yii::$app->response->refresh();
@@ -126,7 +126,7 @@ class DefaultController extends FController
 	{
 		$model = new User();
 		$model->scenario = 'signup';
-		if ($model->load($_POST) && $model->validate()) {
+		if ($model->load($_POST)) {
 			if (!$this->module->activeAfterRegistration)
 				$model->on($model::EVENT_NEW_USER, array($this->module, 'onNewUser'));
 			if ($model->save()) {

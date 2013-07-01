@@ -55,7 +55,7 @@ class DefaultController extends FController
 	public function actionCreate()
 	{
 		$model = new Blog();
-		if ($model->load($_POST) && $model->validate()) {
+		if ($model->load($_POST)) {
 			if ($model->save())
 				return Yii::$app->response->redirect(array('view', 'id' => $model->id));
 		} else {
@@ -67,7 +67,7 @@ class DefaultController extends FController
 	{
 		if ($model = Blog::find($id)) {
 			if (Yii::$app->user->checkAccess('editOwnBlog', array('blog' => $model)) || Yii::$app->user->checkAccess('editBlog')) {
-				if ($model->load($_POST) && $model->validate()) {
+				if ($model->load($_POST)) {
 					if ($model->save())
 						return Yii::$app->response->redirect(array('view', 'id' => $model->id));
 				} else {
