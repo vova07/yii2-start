@@ -3,6 +3,7 @@ yii2-blog
 
 - Простой демо блог на Yii 2.
 - Рабочий пример можно посмотреть тут: http://yii2-blog.find-freelancer.pro/www/
+- Для входа: Login: Amin; Password: Admin11; | Login: test1; Password: Test11;
 
 Модули
 -----------
