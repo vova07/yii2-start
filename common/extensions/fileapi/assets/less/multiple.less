@@ -1,0 +1,53 @@
+.uploader {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+
+	.uploader-controls {
+		margin-bottom: 15px;
+	}
+	.uploader-browse {
+		overflow: hidden;
+    position: relative;
+    width: 200px;
+
+		input {
+			border: none;
+	    outline: none;
+	    opacity: 0;
+	    filter: alpha(opacity=0);
+	    font-size: 100px;
+	    position: absolute;
+	    cursor: pointer;
+	    top: -20px;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+		} 
+	}
+	.uploader-dnd {
+		background: #cccccc;
+		display: block;
+		height: 60px;
+		width: 200px;
+		line-height: 60px;
+		text-align: center;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.progress {
+    margin-bottom: 0 !important;
+  }
+  .uploader-file-tpl {
+  	margin-top: 15px;
+  	text-align: center;
+  }
+  .uploader-file {
+  	position: relative;
+  }
+  .uploader-file-progress {
+  	position: absolute;
+  	top: 40px;
+  	width: 100%;
+  }
+}

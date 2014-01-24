@@ -1,0 +1,40 @@
+#comments-widget {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+#comments-widget .create {
+  margin-bottom: 15px;
+}
+#comments-widget .comment {
+  margin-bottom: 15px !important;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+#comments-widget .author {
+  font-weight: bold;
+  margin-bottom: 0;
+  float: left;
+}
+#comments-widget .manage {
+  float: left;
+}
+#comments-widget .date {
+  float: right;
+}
+#comments-widget .date a,
+#comments-widget .date time {
+  float: right;
+}
+#comments-widget .date a {
+  margin-left: 10px;
+}
+#comments-widget .date time {
+  color: #777;
+}
+#comments-widget .parent-link {
+  float: right;
+}
+#comments-widget .content {
+  clear: both;
+}

@@ -1,0 +1,80 @@
+.uploader {
+  overflow: hidden;
+  clear: both;
+  width: 100px;
+
+  .btn {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .uploader-browse input {
+    border: none;
+    outline: none;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 100px;
+    position: absolute;
+    cursor: pointer;
+    top: -20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .uploader-progress {
+    display: none;
+  }
+  .progress {
+    margin-bottom: 0 !important;
+  }
+  .uploader-preview-cnt {
+    width: 100px;
+    margin-top: 15px;
+    overflow: hidden;
+    clear: both;
+  }
+  .uploader-delete {
+    background: #f38083;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+    width: 100%;
+    text-align: center;
+
+    span {
+      line-height: 30px;
+    }
+  }
+  .uploader-preview {
+    float: left;
+    clear: both;
+    width: 100%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+#modal-crop {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: none;
+  margin: 25px;
+  overflow: hidden;
+  float: left;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  .modal-crop-body {
+    padding: 15px;
+  }
+  .uploader-crop {
+    display: block;
+    position: relative;
+  }
+  .modal-crop-upload {
+    display: block;
+    margin: 15px auto 0;
+  }
+}

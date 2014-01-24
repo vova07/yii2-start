@@ -1,36 +1,42 @@
 {
-	"name": "yiisoft/yii2-app-basic",
-	"description": "Yii 2 Basic Application Template",
-	"keywords": ["yii", "framework", "basic", "application template"],
-	"homepage": "http://www.yiiframework.com/",
+	"description": "Find-Freelancer - Фриланс-Биржа нового поколения: качественно, удобно, функционально.",
+	"keywords": ["freelance", "фриланс", "поиск исполнителя", "freelancer", "удаленная работа"],
+	"homepage": "http://find-freelancer.pro",
 	"type": "project",
-	"license": "BSD-3-Clause",
-	"support": {
-		"issues": "https://github.com/yiisoft/yii2/issues?state=open",
-		"forum": "http://www.yiiframework.com/forum/",
-		"wiki": "http://www.yiiframework.com/wiki/",
-		"irc": "irc://irc.freenode.net/yii",
-		"source": "https://github.com/yiisoft/yii2"
-	},
+	"authors": [
+        {
+            "name": "Vasile Crudu",
+            "email": "bazillio07@yandex.ru",
+            "role": "Основатель, руководитель и ведущий разработчик проекта"
+        }
+    ],
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=5.3.0",
-		"yiisoft/yii2": "dev-master",
-		"yiisoft/yii2-composer": "dev-master",
+		"php": ">=5.4.0",
+		"yiisoft/yii2": "*",
+		"yiisoft/yii2-swiftmailer": "*",
+		"yiisoft/yii2-debug": "*",
+		"yiisoft/yii2-gii": "*",
+		"yiisoft/yii2-sphinx": "*",
 		"ezyang/htmlpurifier": ">=4.5.0"
 	},
 	"scripts": {
 		"post-create-project-cmd": [
-			"yii\\composer\\InstallHandler::setPermissions"
-		]
+		    "yii\\composer\\Installer::setPermission"
+        ]
 	},
 	"extra": {
 		"yii-install-writable": [
-			"runtime",
-			"www/assets"
-		],
-		"yii-install-executable": [
-			"yii"
+			"backend/protected/runtime",
+			"backend/web/assets",
+
+			"common/data",
+
+			"console/runtime",
+			"console/migrations",
+
+			"frontend/protected/runtime",
+			"frontend/web/assets"
 		]
 	}
 }

@@ -1,0 +1,105 @@
+/********************* Страницы сайта *********************/
+
+/*** Каталог пользователей ***/
+#page-users {
+
+  .user {
+
+    h1 a {
+      color: #333;
+    }
+    h1 em {
+      color: #999;
+      font-style: normal;
+    }
+  }
+  .user_price {
+    color: #999;
+
+    strong, sup {
+      float: right;
+      clear: both;
+    }
+    strong {
+      color: #10BF00;
+    }
+    sup {
+      font-size: 75%;
+    }
+  }
+  .user_info {
+
+    p {
+      float: left;
+      position: relative;
+      background: #f8f8f8;
+      color: #468847;
+      font-size: 85%;
+      line-height: 30px;
+      margin: 0 0 10px -15px;
+      padding: 0 0 0 15px;
+      width: 100%;
+    }
+    b {
+      position: absolute;
+      background: url(../img/page_users_info_corner.png) no-repeat;
+      left: -9px;
+      top: 0;
+      display: block;
+      height: 9px;
+      width: 9px;
+    }
+  }
+  .user_availability {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    text-align: center;
+    padding: 0 30px;
+    margin-right: -15px;
+    width: 120px;
+  }
+  .user_availability_busy {
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+    color: #c09853;
+  }
+  .user_availability_away {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+  }
+  .user_portfolio {
+    margin-top: 10px;
+  }
+  .user_portfolio_item {
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #f1f1f1;
+    height: 220px;
+
+    a {
+      display: block;
+      height: 150px;
+      width: 100%;
+      position: relative;
+
+      &:hover img {
+        display: none;
+      }
+      &:hover p {
+        display: block;
+      }
+      p {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        font-size: 85%;
+        color: #666666;
+      }
+    }
+    img {
+      margin: 0 auto;
+    }
+  }
+}

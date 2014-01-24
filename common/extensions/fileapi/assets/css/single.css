@@ -1,0 +1,26 @@
+.uploader {
+  overflow: hidden;
+  clear: both;
+  width: 100px;
+}
+.uploader .btn {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.uploader .uploader-browse input {
+  border: none;
+  outline: none;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  font-size: 100px;
+  position: absolute;
+  cursor: pointer;
+  top: -20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.uploader .progress {
+  margin-bottom: 0 !important;
+}
