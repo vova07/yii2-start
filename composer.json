@@ -1,13 +1,12 @@
 {
-	"description": "Find-Freelancer - Фриланс-Биржа нового поколения: качественно, удобно, функционально.",
-	"keywords": ["freelance", "фриланс", "поиск исполнителя", "freelancer", "удаленная работа"],
-	"homepage": "http://find-freelancer.pro",
+	"description": "Yii2-Start приложение.",
+	"keywords": ["yii2", "app"],
+	"homepage": "http://yii2-start.find-freelancer.pro",
 	"type": "project",
 	"authors": [
         {
             "name": "Vasile Crudu",
-            "email": "bazillio07@yandex.ru",
-            "role": "Основатель, руководитель и ведущий разработчик проекта"
+            "email": "bazillio07@yandex.ru"
         }
     ],
 	"minimum-stability": "dev",
