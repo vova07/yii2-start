@@ -1,17 +1,15 @@
 <?php
 /**
- * Представление цикла комментариев.
- * @var yii\base\View $this
- * @var common\modules\comments\models\Comment $models
+ * Представление цикла категорий.
+ * @var yii\base\View $this Представление
+ * @var common\modules\blogs\modules\categories\models\Category $models Масив моделей
  */
 
 if ($models) { ?>
     <div class="list-group">
 		<?php foreach ($models as $model) {
 			echo $this->render('_index_item', [
-				'model' => $model,
-				'level' => $level,
-				'maxLevel' => $maxLevel
+				'model' => $model
 			]);
 		} ?>
 	</div>

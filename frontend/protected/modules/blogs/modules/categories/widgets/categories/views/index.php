@@ -1,9 +1,9 @@
 <?php
 /**
- * Представление блока комментариев.
- * @var yii\base\View $this
- * @var common\modules\comments\models\Comment $model
- * @var common\modules\comments\models\Comment $models
+ * Представление виджета категорий.
+ * @var yii\base\View $this Представление
+ * @var common\modules\blogs\modules\categories\models\Category $models Масив моделей
+ * @var string $title Заголовок виджета
  */
 ?>
 <div id="categories-widget">
