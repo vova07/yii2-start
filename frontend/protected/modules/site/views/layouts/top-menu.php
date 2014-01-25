@@ -46,7 +46,7 @@ if (Yii::$app->user->isGuest) {
             ],
             [
                 'label' => Yii::t('site', 'Смена E-mail адрсеа'),
-                'url' => ['/users/default/requestemailchange']
+                'url' => ['/users/default/request-email-change']
             ],
             [
                 'label' => Yii::t('site', 'Смена пароля'),
