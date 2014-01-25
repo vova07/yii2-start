@@ -67,7 +67,7 @@ $this->title = Yii::t('yii', 'Yii 2 - Демо приложение'); ?>
             <li>Древовидная структура комментариев.</li>
             <li>Full AJAX работа с комментариями на клиентской стороне.</li>
         </ol>
-        <p><?= Html::a(Yii::t('site', 'Демо пример') . '&raquo;', ['/blogs/default/view', 'id' => 1, 'alias' => 'pervii-post'], ['class' => 'btn btn-default']) ?></p>
+        <p><?= Html::a(Yii::t('site', 'Демо пример') . '&raquo;', ['/blogs/default/view', 'id' => 1, 'alias' => 'printsessa-i-lyagushka'], ['class' => 'btn btn-default']) ?></p>
     </div>
 </div>
 <div class="row">
