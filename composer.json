@@ -1,8 +1,13 @@
 {
+	"name": "vova07/yii2-start",
 	"description": "Yii2-Start приложение.",
-	"keywords": ["yii2", "app"],
+	"keywords": ["yii2", "app", "yii2 blog", "yii2 users", "yii2 comments"],
 	"homepage": "http://yii2-start.find-freelancer.pro",
 	"type": "project",
+	"support": {
+		"issues": "https://github.com/vova07/yii2-start/issues?state=open",
+		"source": "https://github.com/vova07/yii2-start"
+    },
 	"authors": [
         {
             "name": "Vasile Crudu",
@@ -13,12 +18,13 @@
 	"require": {
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
-		"yiisoft/yii2-swiftmailer": "*",
-		"yiisoft/yii2-debug": "*",
-		"yiisoft/yii2-gii": "*",
-		"yiisoft/yii2-sphinx": "*",
-		"ezyang/htmlpurifier": ">=4.5.0"
-	},
+		"yiisoft/yii2-bootstrap": "*",
+		"yiisoft/yii2-swiftmailer": "*"
+    },
+    "require-dev": {
+    	"yiisoft/yii2-debug": "*",
+    	"yiisoft/yii2-gii": "*"
+    },
 	"scripts": {
 		"post-create-project-cmd": [
 		    "yii\\composer\\Installer::setPermission"
