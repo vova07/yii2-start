@@ -10,7 +10,7 @@ $this->title = Yii::t('yii', 'Yii 2 - Демо приложение'); ?>
 <div id="home" class="jumbotron">
     <h1>Yii 2 - Демо приложение</h1>
     <p class="lead">Представляем вам приложение для учебных и демонстрационных целей разработаное на Yii 2.</p>
-    <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Исходный код на Github</a></p>
+    <p><a class="btn btn-lg btn-success" href="https://github.com/vova07/yii2-start" target="_blank">Исходный код на Github</a></p>
 </div>
 <div class="row">
     <div class="col-sm-12">
