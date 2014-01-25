@@ -74,7 +74,7 @@ class Comments extends Widget
     		'id' => $this->getId(),
     		'model' => $model,
     		'models' => $models,
-    		'title' => $title,
+    		'title' => $this->title,
     		'level' => 0,
     		'maxLevel' => $this->maxLevel,
     		'sendButtonText' => $this->sendButtonText,

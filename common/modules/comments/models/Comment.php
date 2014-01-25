@@ -55,12 +55,9 @@ class Comment extends ActiveRecord
 			],
 			'purifierBehavior' => [
 			    'class' => PurifierBehavior::className(),
-				'attributes' => [
+				'textAttributes' => [
 					ActiveRecord::EVENT_BEFORE_UPDATE => ['content'],
 					ActiveRecord::EVENT_BEFORE_INSERT => ['content'],
-				],
-				'purifierOptions' => [
-				    'HTML.AllowedElements' => Yii::$app->params['protected']['allowHtmlTags']
 				]
 			]
 		];
