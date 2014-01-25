@@ -2,6 +2,7 @@
 use yii\helpers\ArrayHelper;
 
 $rootDir = dirname(dirname(__DIR__));
+Yii::setAlias('root', $rootDir);
 Yii::setAlias('common', $rootDir . DIRECTORY_SEPARATOR . 'common');
 Yii::setAlias('frontend', $rootDir . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR . 'protected');
 

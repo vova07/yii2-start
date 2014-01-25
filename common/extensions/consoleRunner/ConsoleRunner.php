@@ -2,6 +2,7 @@
 namespace common\extensions\consoleRunner;
 
 use Yii;
+use yii\base\Component;
 
 /**
  * Класс для запуска консольных команд в фоновом режиме.
@@ -14,7 +15,7 @@ use Yii;
  * ...
  * ```
  */
-class ConsoleRunner
+class ConsoleRunner extends Component
 {
     /**
      * @var string Данная переменная хранит путь к индекс файлу консоли оносительно крневой папки приложения @root.
