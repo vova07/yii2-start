@@ -13,7 +13,7 @@ class CommentsAsset extends AssetBundle
 		'js/comments.js'
 	];
 	public $depends = [
-	    'CommentsGuestAsset',
+	    'frontend\modules\comments\widgets\comments\assets\CommentsGuestAsset',
 		'yii\web\JqueryAsset'
 	];
 }
