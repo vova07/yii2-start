@@ -79,8 +79,7 @@ yii migrate
 
 ~~~
 'siteDomain' => 'http://frontend',
-'staticsDomain' => 'http://statics',
-
+'staticsDomain' => 'http://statics'
 ~~~
 
 *Заметка: В случае использования "OpenServer" в качестве локального сервера, при ошибки "PDO expect driver", или другие подобные ошибки касающийся БД и PDO драйверов, нужно выполнять миграции из консоли самого "OpenServer". Вкладка: `Дополнительно --> Консоль`
