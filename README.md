@@ -69,6 +69,19 @@ yii migrate
 ~~~
 
 - В случае необходимости демо данных, выболняем импорт дампа БД который находится в папке `my/app/common/data/data.sql`.
+- После того как все установлено, нам необходимо определить корневую папку для наших приложений:
+
+1. Для frontend `my/app/frontend/web` определяем адрес `http://frontend`
+2. Для backend `my/app/backend/web` определяем адрес `http://backend`
+3. Для statics `my/app/statics/web` определяем адрес `http://statics`
+
+- После этого в файле `my/app/common/config/params.php` правим значение доменов на наши:
+
+~~~
+'siteDomain' => 'http://frontend',
+'staticsDomain' => 'http://statics',
+
+~~~
 
 *Заметка: В случае использования "OpenServer" в качестве локального сервера, при ошибки "PDO expect driver", или другие подобные ошибки касающийся БД и PDO драйверов, нужно выполнять миграции из консоли самого "OpenServer". Вкладка: `Дополнительно --> Консоль`
 
