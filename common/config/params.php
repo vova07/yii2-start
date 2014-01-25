@@ -18,7 +18,8 @@ return [
 		'tablePrefix' => 'mk3u_'
 	],
 	'components.cache' => [
-		'class' => 'yii\caching\MemCache',
+		'class' => 'yii\caching\FileCache',
+		'cachePath' => '@root/cache',
 		'keyPrefix' => 'yii2start'
 	],
 	'components.mail' => [
