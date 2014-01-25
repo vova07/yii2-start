@@ -5,6 +5,7 @@ use Yii;
 use yii\base\Widget;
 use common\modules\comments\models\Comment;
 use frontend\modules\comments\widgets\comments\assets\CommentsAsset;
+use frontend\modules\comments\widgets\comments\assets\CommentsGuestAsset;
 
 /**
  * Виджет [[Comments]]
@@ -89,8 +90,12 @@ class Comments extends Widget
 	public function registerClientScript()
 	{
 		$view = $this->getView();
-		CommentsAsset::register($view);
-		$view->registerJs("jQuery('#comment-form').comments();");
+		if (Yii::$app->user->checkAccess('createComment')) {
+			CommentsAsset::register($view);
+			$view->registerJs("jQuery('#comment-form').comments();");
+		} else {
+			CommentsGuestAsset::register($view);
+		}
 	}
 
   	/**

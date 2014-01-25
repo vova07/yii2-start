@@ -48,7 +48,7 @@ $this->params['page-id'] = 'blog';
 
 echo $model['content'];
 
-if (Yii::$app->user->checkAccess('createComment')) {
+if (Yii::$app->user->checkAccess('viewComment')) {
     echo Comments::widget([
         'model' => $model,
         'maxLevel' => Yii::$app->getModule('comments')->maxLevel

@@ -6,14 +6,10 @@ use yii\web\AssetBundle;
 /**
  * Менеджер ресурсов виджета комментариев [[Comments]].
  */
-class CommentsAsset extends AssetBundle
+class CommentsGuestAsset extends AssetBundle
 {
 	public $sourcePath = '@frontend/modules/comments/widgets/comments/assets';
-	public $js = [
-		'js/comments.js'
-	];
-	public $depends = [
-	    'CommentsGuestAsset',
-		'yii\web\JqueryAsset'
+	public $css = [
+	    'css/comments.css'
 	];
 }

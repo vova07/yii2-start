@@ -11,7 +11,9 @@
 ?>
 <div id="comments-widget">
     <h3><?= $title ?></h3>
-    <a href="#" class="btn btn-default create"><?= $createButtonTxt ?></a>
+    <?php if (Yii::$app->user->checkAccess('createComment')) { ?>
+        <a href="#" class="btn btn-default create"><?= $createButtonTxt ?></a>
+    <?php } ?>
     <div class="comments">
 	    <?= $this->render('_index_loop', [
 	    	'models' => $models,
@@ -19,11 +21,13 @@
 	    	'maxLevel' => $maxLevel
 	    ]) ?>
     </div>
-    <div class="hide">
-        <?= $this->render('_form', [
-            'model' => $model,
-            'sendButtonText' => $sendButtonText,
-            'cancelButtonText' => $cancelButtonText
-        ]) ?>
-    </div>
+    <?php if (Yii::$app->user->checkAccess('createComment')) { ?>
+        <div class="hide">
+            <?= $this->render('_form', [
+                'model' => $model,
+                'sendButtonText' => $sendButtonText,
+                'cancelButtonText' => $cancelButtonText
+            ]) ?>
+        </div>
+    <?php } ?>
 </div>
