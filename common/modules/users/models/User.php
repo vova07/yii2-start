@@ -42,6 +42,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 * - Неактивный
 	 * - Активный
 	 * - Забанненый
+	 * - Удаленный
 	 */
 	const STATUS_INACTIVE = 0;
 	const STATUS_ACTIVE = 1;
