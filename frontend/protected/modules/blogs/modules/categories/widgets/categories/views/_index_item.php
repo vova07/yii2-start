@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 
 $class = 'list-group-item';
-if ($model['alias'] === Yii::$app->request->get('category')) {
+if ($model['alias'] === Yii::$app->request->getQueryParams('category')) {
 	$class .= ' active';
 }
 echo Html::a($model['title'], ['/blogs/default/index', 'category' => $model['alias']], ['class' => $class]);
