@@ -291,7 +291,7 @@ class User extends ActiveRecord implements IdentityInterface
 	{
 		$key = self::CACHE_USERS_LIST_DATA;
 		$value = Yii::$app->getCache()->get($key);
-		if ($value === false) {
+		if ($value === false || empty($value)) {
 			$value = self::find()->select(['id', 'username'])->orderBy('username ASC')->asArray()->all();
 			$value = ArrayHelper::map($value, 'id', 'username');
 			Yii::$app->cache->set($key, $value);

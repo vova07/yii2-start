@@ -50,8 +50,8 @@ class DefaultController extends Controller
 		Yii::$app->response->format = Response::FORMAT_JSON;
 
 		if ($model->load($_POST) && $model->save()) {
-			$level = Yii::$app->request->getPost('level');
-			if ($level !== '') {
+			$level = Yii::$app->request->get('level');
+			if ($level !== null) {
 				$level = $level < $this->module->maxLevel ? $level + 1 : $this->module->maxLevel;
 			} else {
 				$level = 0;

@@ -37,7 +37,7 @@ if (Yii::$app->user->isGuest) {
     ];
 } else {
     $items[] = [
-        'label' => Yii::t('site', 'Личный кабинет'),
+        'label' => Yii::$app->user->identity->username . ' - ' . Yii::t('site', 'Личный кабинет'),
         'url' => ['/users/default/view', 'username' => Yii::$app->user->identity->username],
         'items' => [
             [

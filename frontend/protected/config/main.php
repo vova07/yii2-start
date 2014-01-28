@@ -37,7 +37,7 @@ return [
 				// Модуль [[Users]]
 				'<_a:(login|logout|signup|activation|recovery|resend|email|avatar)>' => 'users/default/<_a>',
 				'my/settings/email' => 'users/default/request-email-change',
-				'my/settings/<action:(password|update|avatar)>' => 'users/default/<action>',
+				'my/settings/<_a:[\w\-]+>' => 'users/default/<_a>',
 				'<_m:users>/<username:[a-zA-Z0-9_-]{3,20}+>' => '<_m>/default/view',
 
 				// CRUD [[Blogs]]

@@ -102,7 +102,7 @@ class Category extends ActiveRecord
 	{
 		$key = self::CACHE_CATEGORIES_LIST_DATA;
 		$value = Yii::$app->getCache()->get($key);
-		if ($value === false) {
+		if ($value === false || empty($value)) {
 			$value = self::find()->select(['id', 'title'])->orderBy('ordering ASC, title ASC')->published()->asArray()->all();
 			$value = ArrayHelper::map($value, 'id', 'title');
 			Yii::$app->cache->set($key, $value);
