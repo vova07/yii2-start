@@ -69,6 +69,6 @@ class m130704_174427_create_users_tbl extends Migration
 		$time = time();
 		$password_hash = Security::generatePasswordHash('admin12345');
 		$auth_key = Security::generateRandomKey();
-		return "INSERT INTO {{%users}} (`username`, `email`, `name`, `surname`, `password_hash`, `auth_key`, `role_id`, `status_id`, `create_time`, `update_time`) VALUES ('admin', 'admin@demo.com', 'Администрация', 'Сайта', '$password_hash', '$auth_key', 2, 1, $time, $time)";
+		return "INSERT INTO {{%users}} (`username`, `email`, `name`, `surname`, `avatar_url`, `password_hash`, `auth_key`, `role_id`, `status_id`, `create_time`, `update_time`) VALUES ('admin', 'admin@demo.com', 'Администрация', 'Сайта', '', '$password_hash', '$auth_key', 2, 1, $time, $time)";
 	}
 }
