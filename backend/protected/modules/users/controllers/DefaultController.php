@@ -158,7 +158,7 @@ class DefaultController extends Controller
 	 * В случае успеха, пользователь будет перенаправлен на "index" метод.
 	 * @param array $ids Массив с идентификаторами записей которые нужно удалить.
 	 */
-	public function actionBatchDelete($ids)
+	public function actionBatchDelete(array $ids)
 	{
 		$models = $this->findModel($ids);
 		foreach ($models as $model) {

@@ -30,6 +30,9 @@
 		    "yii\\composer\\Installer::setPermission"
         ]
 	},
+	"config": {
+		"preferred-install": "dist"
+	},
 	"extra": {
 		"yii-install-writable": [
 			"backend/protected/runtime",
