@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use yii\widgets\Menu;
 
-$this->title = Yii::t('categories', 'Новая категория');
+$this->title = Yii::t('categories', 'Новый комментарий');
 $this->params['control'] = [
     'brandLabel' => Html::encode($this->title)
 ];

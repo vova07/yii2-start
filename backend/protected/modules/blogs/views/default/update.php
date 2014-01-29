@@ -10,7 +10,7 @@ use yii\widgets\Menu;
 
 $this->title = 'Обновить категорию: ' . $model['title'];
 $this->params['breadcrumbs'][] = [
-    'label' => Yii::t('app', 'Категории блогов'),
+    'label' => Yii::t('blogs', 'Категории блогов'),
     'url' => ['index']
 ];
 $this->params['breadcrumbs'][] = [
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = 'Обновить';
             'activateParents' => true,
             'items' => [
                 [
-                    'label' => '<span class="glyphicon glyphicon-remove-sign"></span> ' . Yii::t('app', 'Отмена'),
+                    'label' => '<span class="glyphicon glyphicon-remove-sign"></span> ' . Yii::t('blogs', 'Отмена'),
                     'url' => ['index']
                 ]
             ]

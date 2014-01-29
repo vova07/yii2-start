@@ -22,10 +22,10 @@ $form = ActiveForm::begin([
             <?= $form->field($model, 'title') .
                 $form->field($model, 'alias') .
                 $form->field($model, 'author_id')->dropDownList($userArray, [
-                    'prompt' => Yii::t('users', 'Выберите автора')
+                    'prompt' => Yii::t('blogs', 'Выберите автора')
                 ]) .
                 $form->field($model, 'status_id')->dropDownList($statusArray, [
-                    'prompt' => Yii::t('comments', 'Выберите статус')
+                    'prompt' => Yii::t('blogs', 'Выберите статус')
                 ]) .
                 $form->field($model, 'categoryIds')->listBox($categoryArray, ['multiple' => true, 'unselect' => '']);
             ?>

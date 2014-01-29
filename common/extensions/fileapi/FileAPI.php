@@ -112,6 +112,8 @@ class FileAPI extends InputWidget
 	{
 		parent::init();
 		$request = Yii::$app->getRequest();
+		// Регистрируем переводы виджета.
+		$this->registerTranslations();
 		// Если CSRF защита включена, добавляем токен в запросы виджета.
 		if ($request->enableCsrfValidation) {
 			$this->settings['data'][$request->csrfVar] = $request->getCsrfToken();
@@ -148,6 +150,34 @@ class FileAPI extends InputWidget
 			}
 		}
 	}
+
+	/**
+	 * Регистрируем переводы виджета.
+	 */
+	public function registerTranslations()
+    {
+        $i18n = Yii::$app->i18n;
+        $i18n->translations['extensions/fileapi/*'] = [
+            'class' => 'yii\i18n\PhpMessageSource',
+            'sourceLanguage' => 'ru',
+            'basePath' => '@common/extensions/fileapi/messages',
+            'fileMap' => [
+                'extensions/fileapi/fileapi' => 'fileapi.php',
+            ],
+        ];
+    }
+
+    /**
+     * Локальная функция перевода виджета.
+     * @param string $category Категория перевода
+     * @param string $message Сообщение которое нужно перевести
+     * @param array $params Массив параметров которые будут заменены на их шаблоны в сообщении
+     * @param string|null $language Язык перевода. В случае null, будет использован текущий [[\yii\base\Application::language|язык приложения]].
+     */
+    public static function t($category, $message, $params = [], $language = null)
+    {
+        return Yii::t('extensions/fileapi/' . $category, $message, $params, $language);
+    }
 
 	/**
 	 * Регистрируем AssetBundle-ы виджета.

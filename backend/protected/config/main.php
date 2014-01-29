@@ -58,7 +58,8 @@ return [
 			'translations' => [
 				'admin' => [
 					'class' => 'yii\i18n\PhpMessageSource',
-					'basePath' => '@app/modules/site/messages',
+					'sourceLanguage' => 'ru',
+					'basePath' => '@backend/modules/admin/messages',
 				]
 			]
 		]

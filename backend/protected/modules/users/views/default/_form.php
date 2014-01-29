@@ -22,10 +22,10 @@ echo $form->field($model, 'name') .
      $form->field($model, 'password')->passwordInput() .
      $form->field($model, 'repassword')->passwordInput() .
      $form->field($model, 'status_id')->dropDownList($statusArray, [
-        'prompt' => Yii::t('comments', 'Выберите статус')
+        'prompt' => Yii::t('users', 'Выберите статус')
      ]) .
      $form->field($model, 'role_id')->dropDownList($roleArray, [
-        'prompt' => Yii::t('comments', 'Выберите роль')
+        'prompt' => Yii::t('users', 'Выберите роль')
      ]) .
      $form->field($model, 'avatar_url')->widget(FileAPIAdvanced::className(), [
         'url' => $this->context->module->avatarUrl(),

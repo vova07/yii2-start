@@ -6,7 +6,7 @@
  */
 
 use yii\helpers\Html;
-use frontend\modules\site\assets\AppAsset;
+use backend\modules\admin\assets\AppAsset;
 ?>
 <title><?php echo Html::encode($this->title); ?></title>
 <?php $this->registerLinkTag(['rel' => 'canonical', 'href' => $this->context->canonicalUrl]);
@@ -18,12 +18,12 @@ $this->registerMetaTag([
 	'content' => 'IE=edge'
 ]);
 $this->registerLinkTag([
-	'href' => Yii::$app->getRequest()->baseUrl . '/frontend/web/favicon.ico',
+	'href' => Yii::$app->getRequest()->baseUrl . '/favicon.ico',
 	'rel' => 'icon',
 	'type' => 'image/x-icon'
 ]);
 $this->registerLinkTag([
-	'href' => Yii::$app->getRequest()->baseUrl . '/frontend/web/favicon.ico',
+	'href' => Yii::$app->getRequest()->baseUrl . '/favicon.ico',
 	'rel' => 'shortcut icon',
 	'type' => 'image/x-icon'
 ]);

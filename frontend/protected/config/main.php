@@ -63,11 +63,8 @@ return [
 			'translations' => [
 				'site' => [
 					'class' => 'yii\i18n\PhpMessageSource',
-					'basePath' => '@app/modules/site/messages',
-				],
-				'blogs' => [
-					'class' => 'yii\i18n\PhpMessageSource',
-					'basePath' => '@app/modules/blogs/messages',
+					'sourceLanguage' => 'ru',
+					'basePath' => '@frontend/modules/site/messages',
 				]
 			]
 		]

@@ -47,18 +47,22 @@ return [
 			'translations' => [
 			    'users' => [
 					'class' => 'yii\i18n\PhpMessageSource',
-					'basePath' => '@app/modules/users/messages',
+					'sourceLanguage' => 'ru',
+					'basePath' => '@common/modules/users/messages',
 				],
 				'blogs' => [
 					'class' => 'yii\i18n\PhpMessageSource',
+					'sourceLanguage' => 'ru',
 					'basePath' => '@common/modules/blogs/messages',
 				],
 				'categories' => [
 					'class' => 'yii\i18n\PhpMessageSource',
+					'sourceLanguage' => 'ru',
 					'basePath' => '@common/modules/blogs/modules/categories/messages',
 				],
 				'comments' => [
 					'class' => 'yii\i18n\PhpMessageSource',
+					'sourceLanguage' => 'ru',
 					'basePath' => '@common/modules/comments/messages',
 				],
 			]

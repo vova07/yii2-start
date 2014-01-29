@@ -57,13 +57,13 @@ echo GridView::widget([
             'value' => function ($model) {
                 return $model->status;
             },
-            'filter' => Html::activeDropDownList($searchModel, 'status_id', $statusArray, ['class' => 'form-control', 'prompt' => Yii::t('blogs', 'Статус')])
+            'filter' => Html::activeDropDownList($searchModel, 'status_id', $statusArray, ['class' => 'form-control', 'prompt' => Yii::t('comments', 'Статус')])
         ],
         'create_time:date',
         'update_time:date',
         [
             'class' => ActionColumn::className(),
-            'header' => Yii::t('blogs', 'Управление')
+            'header' => Yii::t('comments', 'Управление')
         ]
     ]
 ]);

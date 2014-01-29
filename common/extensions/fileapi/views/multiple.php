@@ -3,16 +3,18 @@
  * Представление мульти-загрузки.
  * @var yii\base\View $this Представление
  */
+
+use common\extensions\fileapi\FileAPIAdvanced;
 ?>
 <div id="<?= $selector; ?>" class="uploader">
     <div class="uploader-controls">
 	    <div class="uploader-browse btn btn-default js-fileapi-wrapper">
-	        <span><?= Yii::t('app', 'Добавить файл'); ?></span>
+	        <span><?= FileAPIAdvanced::t('fileapi', 'Добавить файл'); ?></span>
 	        <input type="file" name="<?= $fileVar ?>" />
 	    </div>
     </div>
-    <div class="uploader-dnd"><?= Yii::t('app', 'Drag and Drop') ?></div>
-    <div class="uploader-dnd-not-supported"><?= Yii::t('app', 'Браузер не поддерживает "Drag and Drop"'); ?></div>
+    <div class="uploader-dnd"><?= FileAPIAdvanced::t('fileapi', 'Drag and Drop') ?></div>
+    <div class="uploader-dnd-not-supported"><?= FileAPIAdvanced::t('fileapi', 'Браузер не поддерживает "Drag and Drop"'); ?></div>
     <div class="uploader-files row">
     	<div class="uploader-file-tpl col-sm-2">
             <div class="uploader-file">

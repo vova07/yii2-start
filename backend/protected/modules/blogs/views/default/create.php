@@ -8,9 +8,9 @@
 use yii\helpers\Html;
 use yii\widgets\Menu;
 
-$this->title = Yii::t('app', 'Новый пост');
+$this->title = Yii::t('blogs', 'Новый пост');
 $this->params['breadcrumbs'][] = [
-    'label' => Yii::t('app', 'Блоги'),
+    'label' => Yii::t('blogs', 'Блоги'),
     'url' => ['index']
 ];
 $this->params['breadcrumbs'][] = $this->title;
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'activateParents' => true,
             'items' => [
                 [
-                    'label' => '<span class="glyphicon glyphicon-remove-sign"></span> ' . Yii::t('app', 'Отмена'),
+                    'label' => '<span class="glyphicon glyphicon-remove-sign"></span> ' . Yii::t('blogs', 'Отмена'),
                     'url' => ['index']
                 ]
             ]

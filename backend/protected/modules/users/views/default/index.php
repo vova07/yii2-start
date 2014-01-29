@@ -43,18 +43,18 @@ echo GridView::widget([
             'value' => function ($model) {
                 return $model->status;
             },
-            'filter' => Html::activeDropDownList($searchModel, 'status_id', $statusArray, ['class' => 'form-control', 'prompt' => Yii::t('app', 'Статус')])
+            'filter' => Html::activeDropDownList($searchModel, 'status_id', $statusArray, ['class' => 'form-control', 'prompt' => Yii::t('users', 'Статус')])
         ],
         [
             'attribute' => 'role_id',
             'value' => function ($model) {
                 return $model->role;
             },
-            'filter' => Html::activeDropDownList($searchModel, 'role_id', $roleArray, ['class' => 'form-control', 'prompt' => Yii::t('app', 'Роль')])
+            'filter' => Html::activeDropDownList($searchModel, 'role_id', $roleArray, ['class' => 'form-control', 'prompt' => Yii::t('users', 'Роль')])
         ],
         [
             'class' => ActionColumn::className(),
-            'header' => Yii::t('admin', 'Управление')
+            'header' => Yii::t('users', 'Управление')
         ]
     ]
 ]);

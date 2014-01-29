@@ -3,11 +3,13 @@
  * Представление одиночной загрузки.
  * @var yii\base\View $this Представление
  */
+
+use common\extensions\fileapi\FileAPIAdvanced;
 ?>
 <div id="<?= $selector; ?>" class="uploader">
     <div class="btn btn-default js-fileapi-wrapper">
         <div class="uploader-browse">
-            <?= Yii::t('app', 'Выбрать') ?>
+            <?= FileAPIAdvanced::t('fileapi', 'Выбрать') ?>
             <input type="file" name="<?= $fileVar ?>">
         </div>
         <div class="uploader-progress">

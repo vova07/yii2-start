@@ -35,7 +35,7 @@ $leftItems = [
 $rightItems = [
     [
         'label' => Yii::t('admin', 'Перейти на сайт'),
-        'url' => ['/']
+        'url' => Yii::$app->params['siteDomain']
     ]
 ];
 if (!Yii::$app->user->isGuest) {
