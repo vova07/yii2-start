@@ -29,7 +29,7 @@ echo $form->field($model, 'name') .
      ]) .
      $form->field($model, 'avatar_url')->widget(FileAPIAdvanced::className(), [
         'url' => $this->context->module->avatarUrl(),
-        'deleteUrl' => $this->context->createUrl('/users/default/deleteavatar'),
+        'deleteUrl' => $this->context->createUrl('/users/default/delete-avatar'),
         'deleteTempUrl' => $this->context->createUrl('/users/default/deleteTempAvatar'),
         'crop' => true,
         'cropResizeWidth' => $this->context->module->avatarWidth,
