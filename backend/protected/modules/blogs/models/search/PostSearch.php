@@ -124,6 +124,7 @@ class PostSearch extends Model
         if (trim($value) === '') {
             return;
         }
+        $attribute = Post::tableName() . '.' . $attribute;
         if ($partialMatch) {
             $query->andWhere(['like', $attribute, $value]);
         } else {
