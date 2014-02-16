@@ -116,7 +116,7 @@ class FileAPI extends InputWidget
 		$this->registerTranslations();
 		// Если CSRF защита включена, добавляем токен в запросы виджета.
 		if ($request->enableCsrfValidation) {
-			$this->settings['data'][$request->csrfVar] = $request->getCsrfToken();
+			$this->settings['data'][$request->csrfParam] = $request->getCsrfToken();
 		}
 		// Определяем URL загрузки файлов по умолчанию
 		if (!isset($this->settings['url'])) {
