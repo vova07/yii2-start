@@ -10,7 +10,7 @@ use yii\bootstrap\NavBar;
 
 $options = [
     'id' => 'control-bar',
-    'padded' => false,
+    'renderInnerContainer' => false,
     'brandUrl' => ['index'],
     'options' => [
         'class' => 'navbar-default',
