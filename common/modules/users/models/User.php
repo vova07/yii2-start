@@ -7,7 +7,7 @@ use yii\db\ActiveRecord;
 use yii\helpers\Security;
 use yii\helpers\ArrayHelper;
 use yii\web\IdentityInterface;
-use yii\behaviors\AutoTimestamp;
+use yii\behaviors\TimestampBehavior;
 use common\extensions\fileapi\behaviors\UploadBehavior;
 use common\modules\blogs\models\Post;
 use common\modules\comments\models\Comment;
@@ -114,7 +114,7 @@ class User extends ActiveRecord implements IdentityInterface
 	{
 		return [
 		    'timestampBehavior' => [
-				'class' => AutoTimestamp::className(),
+				'class' => TimestampBehavior::className(),
 				'attributes' => [
 					ActiveRecord::EVENT_BEFORE_INSERT => ['create_time', 'update_time'],
 					ActiveRecord::EVENT_BEFORE_UPDATE => 'update_time',
@@ -144,7 +144,7 @@ class User extends ActiveRecord implements IdentityInterface
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function createQuery($config = [])
     {
         return new UserQuery(['modelClass' => get_called_class()]);
     }
