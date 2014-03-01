@@ -2,7 +2,7 @@
 namespace common\modules\blogs\modules\categories\models;
 
 use Yii;
-use yii\behaviors\AutoTimestamp;
+use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use common\behaviors\TransliterateBehavior;
@@ -62,7 +62,7 @@ class Category extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function tableName()
+	public static function tableName($config = [])
 	{
 		return '{{%posts_categories}}';
 	}

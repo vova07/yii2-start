@@ -4,7 +4,7 @@ namespace common\modules\blogs\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\db\Query;
-use yii\behaviors\AutoTimestamp;
+use yii\behaviors\TimestampBehavior;
 use common\behaviors\TransliterateBehavior;
 use common\behaviors\PurifierBehavior;
 use common\extensions\fileapi\behaviors\UploadBehavior;
@@ -77,7 +77,7 @@ class Post extends ActiveRecord
 	{
 		return [
 			'timestampBehavior' => [
-				'class' => AutoTimestamp::className(),
+				'class' => TimestampBehavior::className(),
 				'attributes' => [
 					ActiveRecord::EVENT_BEFORE_INSERT => ['create_time', 'update_time'],
 					ActiveRecord::EVENT_BEFORE_UPDATE => 'update_time',
@@ -135,7 +135,7 @@ class Post extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function createQuery($config = [])
     {
         return new PostQuery(['modelClass' => get_called_class()]);
     }
