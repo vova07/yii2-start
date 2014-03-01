@@ -6,7 +6,7 @@ use yii\db\ActiveRecord;
 use yii\data\ActiveDataProvider;
 use yii\data\ArrayDataProvider;
 use yii\helpers\HtmlPurifier;
-use yii\behaviors\AutoTimestamp;
+use yii\behaviors\TimestampBehavior;
 use common\behaviors\PurifierBehavior;
 use common\modules\blogs\models\Post;
 use common\modules\users\models\User;
@@ -47,7 +47,7 @@ class Comment extends ActiveRecord
 	{
 		return [
 			'timestampBehavior' => [
-				'class' => AutoTimestamp::className(),
+				'class' => TimestampBehavior::className(),
 				'attributes' => [
 					ActiveRecord::EVENT_BEFORE_INSERT => ['create_time', 'update_time'],
 					ActiveRecord::EVENT_BEFORE_UPDATE => 'update_time',
@@ -74,7 +74,7 @@ class Comment extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function createQuery($config = [])
     {
         return new CommentQuery(['modelClass' => get_called_class()]);
     }
