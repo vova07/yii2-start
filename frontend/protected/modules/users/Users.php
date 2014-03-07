@@ -58,7 +58,7 @@ class Users extends \common\modules\users\Users
 	public function onRecoveryPassword($event) {
 		$model = $event->sender;
 		$cr = new ConsoleRunner();
-		return $cr->run('users/recovery-password ' . $model);
+		return $cr->run('users/recovery-password ' . $model['email'] . ' ' . $model['password']);
 	}
 
 	/**
@@ -69,6 +69,6 @@ class Users extends \common\modules\users\Users
 	public function onEmailChange($event) {
 		$model = $event->sender;
 		$cr = new ConsoleRunner();
-		return $cr->run('users/email ' . $model);
+		return $cr->run('users/email ' . $model['email'] . ' ' . $model['auth_key']);
 	}
 }

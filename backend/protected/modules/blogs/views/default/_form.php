@@ -15,7 +15,7 @@ $form = ActiveForm::begin([
 	'enableClientValidation' => false,
 	'enableAjaxValidation' => true,
 	'validateOnChange' => false,
-    'beforeSubmit' => new JsExpression('function ($form) {tinymce.triggerSave(); return true;}')
+    'beforeValidate' => new JsExpression('function ($form, attribute, messages) { if (attribute.name === "' . Html::getInputId($model, 'content') . '") { tinymce.triggerSave(); } return true; }')
 ]); ?>
     <div class="row">
         <div class="col-sm-12">
