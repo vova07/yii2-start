@@ -34,6 +34,9 @@ return [
 				'' => 'site/default/index',
 				'<_a:(about|contact|error|captcha)>' => 'site/default/<_a>',
 
+				// Общие правила
+				'<_m:(users|blogs)>' => '<_m>/default/index',
+
 				// Модуль [[Users]]
 				'<_a:(login|logout|signup|activation|recovery|resend|email|avatar)>' => 'users/default/<_a>',
 				'my/settings/email' => 'users/default/request-email-change',
@@ -50,10 +53,7 @@ return [
 				// Общие CRUD правила
 				'POST <_m:[\w\-]+>' => '<_m>/default/create',
 				'POST <_m:[\w\-]+>/<id:\d+>' => '<_m>/default/update',
-				'DELETE <_m:[\w\-]+>/<id:\d+>' => '<_m>/default/delete',
-
-				// Общие правила
-				'<_m:(users|blogs)>' => '<_m>/default/index'
+				'DELETE <_m:[\w\-]+>/<id:\d+>' => '<_m>/default/delete'
 			]
 		],
 		'errorHandler' => [

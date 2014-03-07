@@ -4,6 +4,7 @@ namespace common\modules\users\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\Security;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * Class UserEmail
@@ -40,11 +41,11 @@ class UserEmail extends ActiveRecord
 	{
 		return [
 			'timestamp' => [
-				'class' => 'yii\behaviors\AutoTimestamp',
+				'class' => TimestampBehavior::className(),
 				'attributes' => [
 					ActiveRecord::EVENT_BEFORE_INSERT => ['valide_time'],
 				],
-				'timestamp' => [self::className(), 'expire']
+				'value' => [self::className(), 'expire']
 			]
 		];
 	}
