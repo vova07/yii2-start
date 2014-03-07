@@ -137,7 +137,8 @@ class Post extends ActiveRecord
 	 */
 	public static function createQuery($config = [])
     {
-        return new PostQuery(['modelClass' => get_called_class()]);
+    	$config['modelClass'] = get_called_class();
+        return new PostQuery($config);
     }
 
 	/**

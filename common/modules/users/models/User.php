@@ -146,8 +146,17 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function createQuery($config = [])
     {
-        return new UserQuery(['modelClass' => get_called_class()]);
+    	$config['modelClass'] = get_called_class();
+        return new UserQuery($config);
     }
+
+    /**
+	 * @inheritdoc
+	 */
+	public static function findIdentityByAccessToken($token)
+	{
+		throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+	}
 
 	/**
 	 * Выбор пользователя по [[id]]

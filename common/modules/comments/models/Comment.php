@@ -76,7 +76,8 @@ class Comment extends ActiveRecord
 	 */
 	public static function createQuery($config = [])
     {
-        return new CommentQuery(['modelClass' => get_called_class()]);
+    	$config['modelClass'] = get_called_class();
+        return new CommentQuery($config);
     }
 
 	/**
