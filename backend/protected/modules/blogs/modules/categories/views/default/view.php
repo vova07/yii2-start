@@ -22,7 +22,7 @@ echo DetailView::widget([
 	    'title',
         'alias',
 	    [
-            'name' => 'status_id',
+            'attribute' => 'status_id',
             'value' => $model->status
         ]
 	]

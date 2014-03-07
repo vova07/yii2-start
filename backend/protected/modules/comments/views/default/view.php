@@ -23,23 +23,23 @@ echo DetailView::widget([
 	'attributes' => [
 	    'id',
         [
-            'name' => 'author_id',
+            'attribute' => 'author_id',
             'format' => 'html',
             'value' => Html::a($model->author->getFio(true), ['/users/default/view', 'id' => $model->author->id])
         ],
         [
-            'name' => 'post_id',
+            'attribute' => 'post_id',
             'format' => 'html',
             'value' => Html::a($model->post->title, ['/blogs/default/view', 'id' => $model->post->id])
         ],
         [
-            'name' => 'parent_id',
+            'attribute' => 'parent_id',
             'format' => 'html',
             'value' => $model->commentParent ? Html::a($model->commentParent->id, ['/comments/default/view', 'id' => $model->commentParent->id]) : ''
         ],
         'content:html',
 	    [
-            'name' => 'status_id',
+            'attribute' => 'status_id',
             'value' => $model->status
         ],
         'create_time:date',

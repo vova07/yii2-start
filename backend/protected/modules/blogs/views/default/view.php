@@ -34,27 +34,27 @@ echo DetailView::widget([
 	    'title',
         'alias',
         [
-            'name' => 'author_id',
+            'attribute' => 'author_id',
             'value' => $model->author->getFio(true)
         ],
         [
-            'name' => 'categoryIds',
+            'attribute' => 'categoryIds',
             'format' => 'html',
             'value' => $categories
         ],
 	    [
-            'name' => 'status_id',
+            'attribute' => 'status_id',
             'value' => $model->status
         ],
         'snippet:html',
         'content:html',
         [
-            'name' => 'preview_url',
+            'attribute' => 'preview_url',
             'format' => 'html',
             'value' => $preview
         ],
         [
-            'name' => 'image_url',
+            'attribute' => 'image_url',
             'format' => 'html',
             'value' => $image
         ]

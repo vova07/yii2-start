@@ -19,7 +19,7 @@ echo DetailView::widget([
 	'attributes' => [
 	    'id',
         [
-            'name' => 'avatar_url',
+            'attribute' => 'avatar_url',
             'format' => 'html',
             'value' => ($model->avatar !== null) ? Html::img($model->avatar) : ''
         ],
@@ -28,19 +28,19 @@ echo DetailView::widget([
 	    'username',
         'email',
         [
-            'name' => 'status_id',
+            'attribute' => 'status_id',
             'value' => $model->status
         ],
 	    [
-	        'name' => 'role_id',
+	        'attribute' => 'role_id',
 	        'value' => $model->role
 	    ],
 	    [
-	        'name' => 'create_time',
+	        'attribute' => 'create_time',
 	        'format' => ['date', 'd/m/Y']
 	    ],
         [
-            'name' => 'update_time',
+            'attribute' => 'update_time',
             'format' => ['date', 'd/m/Y']
         ]
 	]
