@@ -69,6 +69,6 @@ class Users extends \common\modules\users\Users
 	public function onEmailChange($event) {
 		$model = $event->sender;
 		$cr = new ConsoleRunner();
-		return $cr->run('users/email ' . $model['email'] . ' ' . $model['auth_key']);
+		return $cr->run('users/email ' . $model['email'] . ' ' . $model['token']);
 	}
 }
