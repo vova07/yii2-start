@@ -6,10 +6,11 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use backend\modules\admin\assets\AppAsset;
 ?>
 <title><?php echo Html::encode($this->title); ?></title>
-<?php $this->registerLinkTag(['rel' => 'canonical', 'href' => $this->context->canonicalUrl]);
+<?php $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 $this->registerMetaTag([
 	'charset' => Yii::$app->charset
 ]);
