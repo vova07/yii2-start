@@ -8,6 +8,7 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use yii\web\JsExpression;
 use common\extensions\tinymce\Tinymce;
@@ -35,10 +36,10 @@ if (isset($action) && $action) {
         <div class="col-lg-6">
             <?= $form->field($model, 'image_url')->widget(FileAPIAdvanced::className(), [
                 'url' => $this->context->module->imageUrl(),
-                'deleteUrl' => $this->context->createUrl('/blogs/default/delete-image'),
-                'deleteTempUrl' => $this->context->createUrl('/blogs/default/deleteTempImage'),
+                'deleteUrl' => Url::toRoute('/blogs/default/delete-image'),
+                'deleteTempUrl' => Url::toRoute('/blogs/default/deleteTempImage'),
                 'settings' => [
-                    'url' => $this->context->createUrl('uploadTempImage'),
+                    'url' => Url::toRoute('uploadTempImage'),
                     'imageTransform' => [
                         'imageOriginal' => false,
                         'width' => $this->context->module->imageWidth,
@@ -51,10 +52,10 @@ if (isset($action) && $action) {
         <div class="col-lg-6">
             <?= $form->field($model, 'preview_url')->widget(FileAPIAdvanced::className(), [
                 'url' => $this->context->module->previewUrl(),
-                'deleteUrl' => $this->context->createUrl('/blogs/default/delete-preview'),
-                'deleteTempUrl' => $this->context->createUrl('/blogs/default/deleteTempPreview'),
+                'deleteUrl' => Url::toRoute('/blogs/default/delete-preview'),
+                'deleteTempUrl' => Url::toRoute('/blogs/default/deleteTempPreview'),
                 'settings' => [
-                    'url' => $this->context->createUrl('uploadTempPreview'),
+                    'url' => Url::toRoute('uploadTempPreview'),
                     'imageTransform' => [
                         'imageOriginal' => false,
                         'width' => $this->context->module->previewWidth,

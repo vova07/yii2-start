@@ -3,7 +3,6 @@ namespace console\controllers;
 
 use Yii;
 use yii\console\Controller;
-use common\modules\users\models\User;
 
 /**
  * Контроллер для фоновой работы с пользователями.
