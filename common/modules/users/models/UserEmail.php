@@ -97,6 +97,14 @@ class UserEmail extends ActiveRecord
 	}
 
 	/**
+	 * @return \yii\db\ActiveRelation Пользователь к которому привязана запись модели.
+	 */
+	public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+	/**
 	 * @inheritdoc
 	 */
 	public function beforeSave($insert)

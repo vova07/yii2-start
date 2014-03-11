@@ -5,6 +5,7 @@ use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\AccessControl;
 use yii\web\HttpException;
+use yii\helpers\Url;
 use common\modules\users\models\User;
 use common\modules\users\models\LoginForm;
 use common\modules\users\models\UserEmail;
@@ -139,7 +140,7 @@ class DefaultController extends Controller
 			// Если после регистрации нужно подтвердить почтовый адрес, вызываем функцию отправки кода активации на почту.
 			if ($this->module->activeAfterRegistration === false) {
 				// Сообщаем пользователю что регистрация прошла успешно, и что на его e-mail был отправлен ключ активации аккаунта.
-				Yii::$app->session->setFlash('success', Yii::t('users', 'Учётная запись была успешно создана. Через несколько секунд вам на почту будет отправлен код для активации аккаунта. В случае если письмо не пришло в течении 15 минут, вы можете заново запросить отправку ключа по данной <a href="{url}">ссылке</a>. Спасибо!', ['url' => $this->createUrl('resend')]));
+				Yii::$app->session->setFlash('success', Yii::t('users', 'Учётная запись была успешно создана. Через несколько секунд вам на почту будет отправлен код для активации аккаунта. В случае если письмо не пришло в течении 15 минут, вы можете заново запросить отправку ключа по данной <a href="{url}">ссылке</a>. Спасибо!', ['url' => Url::toRoute('resend')]));
 			} else {
 				// Авторизуем сразу пользователя.
 				Yii::$app->getUser()->login($model);
