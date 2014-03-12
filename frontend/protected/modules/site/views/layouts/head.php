@@ -18,6 +18,10 @@ $this->registerMetaTag([
 	'http-equiv' => 'X-UA-Compatible',
 	'content' => 'IE=edge'
 ]);
+$this->registerMetaTag([
+	'name' => 'viewport',
+	'content' => 'width=device-width, initial-scale=1'
+]);
 $this->registerLinkTag([
 	'href' => Yii::$app->getRequest()->baseUrl . '/favicon.ico',
 	'rel' => 'icon',
