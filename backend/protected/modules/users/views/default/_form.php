@@ -7,6 +7,7 @@
  */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use common\extensions\fileapi\FileAPIAdvanced;
 
@@ -29,13 +30,13 @@ echo $form->field($model, 'name') .
      ]) .
      $form->field($model, 'avatar_url')->widget(FileAPIAdvanced::className(), [
         'url' => $this->context->module->avatarUrl(),
-        'deleteUrl' => $this->context->createUrl('/users/default/delete-avatar'),
-        'deleteTempUrl' => $this->context->createUrl('/users/default/deleteTempAvatar'),
+        'deleteUrl' => Url::toRoute('/users/default/delete-avatar'),
+        'deleteTempUrl' => Url::toRoute('/users/default/deleteTempAvatar'),
         'crop' => true,
         'cropResizeWidth' => $this->context->module->avatarWidth,
         'cropResizeHeight' => $this->context->module->avatarHeight,
         'settings' => [
-            'url' => $this->context->createUrl('uploadTempAvatar'),
+            'url' => Url::toRoute('uploadTempAvatar'),
             'imageSize' =>  [
 		        'minWidth' => $this->context->module->avatarWidth,
 		        'minHeight' => $this->context->module->avatarHeight
