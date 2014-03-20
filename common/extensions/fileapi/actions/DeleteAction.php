@@ -49,7 +49,7 @@ class DeleteAction extends Action
 	 */
 	public function run()
 	{
-		if (($file = Yii::$app->request->getDelete($this->fileVar))) {
+		if (($file = Yii::$app->request->getBodyParam($this->fileVar))) {
 			if (is_file($this->path . $file)) {
 				unlink($this->path . $file);
 			}
