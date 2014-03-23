@@ -121,7 +121,7 @@ class Category extends ActiveRecord
 			[['title', 'alias'], 'filter', 'filter' => 'trim'],
 
 			// Заголовок [[title]]
-			['title', 'required'],
+			[['title', 'status_id'], 'required'],
 
 			// Статус [[status_id]]
 			['status_id', 'in', 'range' => array_keys(self::getStatusArray())],
