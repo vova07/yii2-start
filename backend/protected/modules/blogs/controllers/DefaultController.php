@@ -76,7 +76,7 @@ class DefaultController extends Controller
 	public function actionIndex()
 	{
 		$searchModel = new PostSearch;
-		$dataProvider = $searchModel->search($_GET);
+		$dataProvider = $searchModel->search(Yii::$app->request->get());
 		$statusArray = Post::getStatusArray();
 		$categoryArray = Category::getCategoryArray();
 

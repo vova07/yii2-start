@@ -69,7 +69,7 @@ class DefaultController extends Controller
 	public function actionIndex()
 	{
 		$searchModel = new UserSearch;
-		$dataProvider = $searchModel->search($_GET);
+		$dataProvider = $searchModel->search(Yii::$app->request->get());
 		$roleArray = User::getRoleArray();
 		$statusArray = User::getStatusArray();
 

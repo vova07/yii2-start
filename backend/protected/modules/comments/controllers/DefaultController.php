@@ -22,7 +22,7 @@ class DefaultController extends Controller
 	public function actionIndex()
 	{
 		$searchModel = new CommentSearch;
-		$dataProvider = $searchModel->search($_GET);
+		$dataProvider = $searchModel->search(Yii::$app->request->get());
 		$statusArray = Comment::getStatusArray();
 
 		return $this->render('index', [

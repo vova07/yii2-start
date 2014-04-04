@@ -86,7 +86,7 @@ class DefaultController extends Controller
 	{
 		$model = new Post(['scenario' => 'create']);
 		$searchModel = new PostSearch;
-		$dataProvider = $searchModel->search($_GET);
+		$dataProvider = $searchModel->search(Yii::$app->request->get());
 		$categoryArray = Category::getCategoryArray();
 		// Рендерим представление
 		return $this->render('index', [
