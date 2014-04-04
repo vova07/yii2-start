@@ -57,7 +57,7 @@ class DefaultController extends Controller
 		$statusArray = Comment::getStatusArray();
 		$userArray = User::getUserArray();
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			return $this->redirect(['view', 'id' => $model['id']]);
 		} elseif (Yii::$app->request->isAjax) {
 			Yii::$app->response->format = Response::FORMAT_JSON;
@@ -83,7 +83,7 @@ class DefaultController extends Controller
 		$statusArray = Comment::getStatusArray();
 		$userArray = User::getUserArray();
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			return $this->redirect(['view', 'id' => $model['id']]);
 		} elseif (Yii::$app->request->isAjax) {
 			Yii::$app->response->format = Response::FORMAT_JSON;

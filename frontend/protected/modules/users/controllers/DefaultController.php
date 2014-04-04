@@ -136,7 +136,7 @@ class DefaultController extends Controller
 			$model->on(User::EVENT_AFTER_INSERT, [$this->module, 'onSignup']);
 		}
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			// Если после регистрации нужно подтвердить почтовый адрес, вызываем функцию отправки кода активации на почту.
 			if ($this->module->activeAfterRegistration === false) {
 				// Сообщаем пользователю что регистрация прошла успешно, и что на его e-mail был отправлен ключ активации аккаунта.
@@ -165,7 +165,7 @@ class DefaultController extends Controller
 		// Добавляем обработчик события который отправляет сообщение с клюом активации на e-mail адрес что был указан при запросе его повторной отправке.
 		$model->on(User::EVENT_AFTER_VALIDATE_SUCCESS, [$this->module, 'onResend']);
 
-		if ($model->load($_POST) && $model->validate()) {
+		if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 			// Сообщаем пользователю что ключ активации был повторно отправлен на его электронный адрес.
 			Yii::$app->session->setFlash('success', Yii::t('users', 'На указанный почтовый адрес был отправлен новый код для активации учётной записи. Спасибо!'));
 			// Перенаправляем пользователя на главную страницу сайта.
@@ -187,7 +187,7 @@ class DefaultController extends Controller
 			$this->goHome();
 		}
 		$model = new LoginForm;
-		if ($model->load($_POST) && $model->login()) {
+		if ($model->load(Yii::$app->request->post()) && $model->login()) {
 			// В случае успешной авторизации, перенаправляем пользователя обратно на предыдущию страницу.
 			return $this->goBack();
 		}
@@ -260,7 +260,7 @@ class DefaultController extends Controller
 			// Добавляем обработчик события который отправляет сообщение с ключом подтверждения смены пароля на e-mail адрес пользователя.
 			$model->on(User::EVENT_AFTER_VALIDATE_SUCCESS, [$this->module, 'onRecoveryConfirm']);
 
-			if ($model->load($_POST) && $model->validate()) {
+			if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 			    // Перенаправляем пользователя на главную страницу, и оповещаем его об успешном завершении запроса восставновления пароля.
 			    Yii::$app->session->setFlash('success', Yii::t('users', 'Ссылка для восстановления пароля, была отправлена на указанный вами электронный адрес.'));
 			    return $this->goHome();
@@ -281,7 +281,7 @@ class DefaultController extends Controller
 		if ($model = User::find(Yii::$app->user->id)) {
 			$model->setScenario('update');
 
-			if ($model->load($_POST) && $model->save()) {
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
 				// В случае успешного обновления данных, оповещаем пользователя об этом, и перенаправляем его на страницу профиля.
 				Yii::$app->session->setFlash('success', Yii::t('users', 'Данные профиля были успешно обновлены!'));
 				return $this->redirect(['view', 'username' => $model->username]);
@@ -318,7 +318,7 @@ class DefaultController extends Controller
 		if ($model = User::find(Yii::$app->user->id)) {
 			$model->setScenario('password');
 
-			if ($model->load($_POST) && $model->save()) {
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
 				// В случае успешного обновления пароля, оповещаем пользователя об этом, и перенаправляем его на страницу профиля.
 				Yii::$app->session->setFlash('success', Yii::t('users', 'Пароль был успешно обновлён!'));
 				return $this->redirect(['view', 'username' => $model->username]);
@@ -341,7 +341,7 @@ class DefaultController extends Controller
 		// Добавляем обработчик события который отправляет сообщение с клюом активации на новый e-mail адрес.
 		$model->on(UserEmail::EVENT_AFTER_INSERT, [$this->module, 'onEmailChange']);
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			// В случае успешного запроса смены e-mail адреса, оповещаем пользователя об этом, и перенаправляем его на страницу профиля.
 			Yii::$app->session->setFlash('success', Yii::t('users', 'На ваш новый e-mail адрес был успешно отправлен ключ для его подтверждения.'));
 			return $this->redirect(['view', 'username' => Yii::$app->user->identity->username]);

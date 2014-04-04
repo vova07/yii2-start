@@ -102,7 +102,7 @@ class DefaultController extends Controller
 		$roleArray = User::getRoleArray();
 		$statusArray = User::getStatusArray();
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			return $this->redirect(['view', 'id' => $model['id']]);
 		} elseif (Yii::$app->request->isAjax) {
 			Yii::$app->response->format = Response::FORMAT_JSON;
@@ -127,7 +127,7 @@ class DefaultController extends Controller
 		$roleArray = User::getRoleArray();
 		$statusArray = User::getStatusArray();
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			return $this->redirect(['view', 'id' => $model['id']]);
 		} elseif (Yii::$app->request->isAjax) {
 			Yii::$app->response->format = Response::FORMAT_JSON;
@@ -192,7 +192,7 @@ class DefaultController extends Controller
 		}
 		$this->layout = '/login';
 		$model = new LoginForm(['scenario' => 'admin']);
-		if ($model->load($_POST) && $model->login()) {
+		if ($model->load(Yii::$app->request->post()) && $model->login()) {
 			// В случае успешной авторизации, перенаправляем пользователя обратно на предыдущию страницу.
 			return $this->goHome();
 		} elseif (Yii::$app->request->isAjax) {

@@ -41,7 +41,7 @@ class DefaultController extends Controller
 	public function actionContact()
 	{
 		$model = new ContactForm;
-        if ($model->load($_POST) && $model->contact(Yii::$app->params['adminEmail'])) {
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
         	Yii::$app->session->setFlash('success', Yii::t('site', 'Спасибо что написали нам! Мы постараемся ответить как можно быстрее.'));
         	return $this->refresh();
         } else {
