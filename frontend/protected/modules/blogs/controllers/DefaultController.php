@@ -122,7 +122,7 @@ class DefaultController extends Controller
 	public function actionCreate()
 	{
 		$model = new Post(['scenario' => 'create']);
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			return $this->redirect(['view', 'id' => $model['id'], 'alias' => $model['alias']]);
 		} else {
 			Yii::$app->response->format = Response::FORMAT_JSON;
@@ -138,7 +138,7 @@ class DefaultController extends Controller
 		if ($model = Post::findPublishedByIdAlias($id, $alias)) {
 			if (Yii::$app->user->checkAccess('updateOwnPost', ['model' => $model])) {
 				$model->setScenario('update');
-				if ($model->load($_POST) && $model->save()) {
+				if ($model->load(Yii::$app->request->post()) && $model->save()) {
 					return $this->redirect(['view', 'id' => $model['id'], 'alias' => $model['alias']]);
 				} else {
 					Yii::$app->response->format = Response::FORMAT_JSON;

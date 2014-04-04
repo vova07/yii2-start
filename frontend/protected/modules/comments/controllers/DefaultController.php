@@ -49,7 +49,7 @@ class DefaultController extends Controller
 		$model = new Comment(['scenario' => 'create']);
 		Yii::$app->response->format = Response::FORMAT_JSON;
 
-		if ($model->load($_POST) && $model->save()) {
+		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			$level = Yii::$app->request->get('level');
 			if ($level !== null) {
 				$level = $level < $this->module->maxLevel ? $level + 1 : $this->module->maxLevel;
@@ -79,7 +79,7 @@ class DefaultController extends Controller
 			$model->setScenario('update');
 			Yii::$app->response->format = Response::FORMAT_JSON;
 
-			if ($model->load($_POST) && $model->save()) {
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
 				return ['success' => $model['content']];
 			} else {
 				return ['errors' => ActiveForm::validate($model)];
