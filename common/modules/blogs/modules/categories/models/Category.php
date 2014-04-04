@@ -70,10 +70,9 @@ class Category extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery($config = [])
+	public static function createQuery()
     {
-    	$config['modelClass'] = get_called_class();
-        return new CategoryQuery($config);
+        return new CategoryQuery(get_called_class());
     }
 
 	/**

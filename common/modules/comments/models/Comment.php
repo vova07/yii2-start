@@ -74,10 +74,9 @@ class Comment extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery($config = [])
+	public static function createQuery()
     {
-    	$config['modelClass'] = get_called_class();
-        return new CommentQuery($config);
+        return new CommentQuery(get_called_class());
     }
 
 	/**

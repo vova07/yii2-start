@@ -135,10 +135,9 @@ class Post extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery($config = [])
+	public static function createQuery()
     {
-    	$config['modelClass'] = get_called_class();
-        return new PostQuery($config);
+        return new PostQuery(get_called_class());
     }
 
 	/**
