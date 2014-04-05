@@ -3,7 +3,7 @@ namespace frontend\modules\users\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use yii\web\HttpException;
 use yii\helpers\Url;
 use common\modules\users\models\User;

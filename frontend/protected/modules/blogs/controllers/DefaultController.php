@@ -2,10 +2,10 @@
 namespace frontend\modules\blogs\controllers;
 
 use Yii;
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use yii\web\HttpException;
 use yii\web\Response;
-use yii\web\VerbFilter;
+use yii\filters\VerbFilter;
 use yii\widgets\ActiveForm;
 use common\modules\blogs\models\Post;
 use common\modules\blogs\models\search\PostSearch;

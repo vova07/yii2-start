@@ -2,7 +2,7 @@
 namespace backend\modules\admin\controllers;
 
 use Yii;
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use backend\modules\admin\components\Controller;
 use common\modules\users\models\User;
 
