@@ -1,7 +1,7 @@
 <?php
 namespace backend\modules\admin\components;
 
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use common\modules\users\models\User;
 
 /**
