@@ -3,7 +3,7 @@ namespace backend\modules\users\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use yii\web\Response;
 use yii\web\HttpException;
 use yii\widgets\ActiveForm;

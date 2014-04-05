@@ -5,7 +5,7 @@ use Yii;
 use yii\helpers\ArrayHelper;
 use yii\web\Response;
 use yii\web\HttpException;
-use yii\web\AccessControl;
+use yii\filters\AccessControl;
 use yii\widgets\ActiveForm;
 use backend\modules\admin\components\Controller;
 use backend\modules\blogs\models\search\PostSearch;
