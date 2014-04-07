@@ -8,6 +8,6 @@ class AuthorRule extends Rule
 {
     public function execute($params, $data)
     {
-        return $params['userId'] === $params['model']['author_id'];
+        return $params['userId'] === $data['model']['author_id'];
     }
 }
