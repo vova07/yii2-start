@@ -163,7 +163,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findIdentity($id)
 	{
-		return static::find($id);
+		return static::findOne($id);
 	}
 
 	/**
@@ -172,7 +172,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findByUsername($username)
 	{
-		return static::find()->where('username = :username', [':username' => $username])->one();
+		return static::findOne()->where('username = :username', [':username' => $username])->one();
 	}
 
 	/**
@@ -181,7 +181,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findActiveByUsername($username)
 	{
-		return static::find()->where('username = :username', [':username' => $username])->active()->one();
+		return static::findOne()->where('username = :username', [':username' => $username])->active()->one();
 	}
 
 	/**
@@ -190,7 +190,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findInactiveByUsername($username)
 	{
-		return static::find()->where('username = :username', [':username' => $username])->inactive()->one();
+		return static::findOne()->where('username = :username', [':username' => $username])->inactive()->one();
 	}
 
 	/**
@@ -199,7 +199,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findActiveAdminByUsername($username)
 	{
-		return static::find()->where(['and', 'username = :username', ['or', 'role_id = ' . self::ROLE_ADMIN,  'role_id = ' . self::ROLE_SUPERADMIN]], [':username' => $username])->active()->one();
+		return static::findOne()->where(['and', 'username = :username', ['or', 'role_id = ' . self::ROLE_ADMIN,  'role_id = ' . self::ROLE_SUPERADMIN]], [':username' => $username])->active()->one();
 	}
 
 	/**
