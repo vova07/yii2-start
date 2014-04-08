@@ -135,7 +135,7 @@ class Post extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function find()
     {
         return new PostQuery(get_called_class());
     }

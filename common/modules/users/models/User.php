@@ -144,7 +144,7 @@ class User extends ActiveRecord implements IdentityInterface
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function find()
     {
         return new UserQuery(get_called_class());
     }
@@ -163,7 +163,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public static function findIdentity($id)
 	{
-		return static::find($id);
+		return static::findOne($id);
 	}
 
 	/**

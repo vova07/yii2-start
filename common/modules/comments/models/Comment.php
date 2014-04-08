@@ -74,7 +74,7 @@ class Comment extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function find()
     {
         return new CommentQuery(get_called_class());
     }

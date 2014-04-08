@@ -6,6 +6,14 @@ use yii\rbac\Rule;
 
 class AuthorRule extends Rule
 {
+	/**
+	 * @inheritdoc
+	 */
+	public $name = 'author';
+	
+	/**
+	 * @inheritdoc
+	 */
     public function execute($params, $data)
     {
         return $params['userId'] === $params['model']['author_id'];
