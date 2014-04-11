@@ -1,6 +1,6 @@
 <?php
 return [
-    'preload' => [
+    'bootstrap' => [
 		'debug',
 	],
 	'modules' => [
@@ -14,7 +14,7 @@ return [
 	'components' => [
 		'urlManager' => [
 			'rules' => [
-				'<_m:debug>/<_c:\w+>/<_a:\w+>' => '<_m>/<_c>/<_a>',
+				'<_m:(debug|gii)>/<_c:\w+>/<_a:\w+>' => '<_m>/<_c>/<_a>',
 			]
 		],
 	]
