@@ -18,10 +18,10 @@ $author = $model->author;
 		<?php echo $model['content']; ?>
 	</div>
 
-	<?php if (Yii::$app->user->checkAccess('updateOwnPost', ['model' => $model])) : ?>
+	<?php if (Yii::$app->user->can('updateOwnPost', ['model' => $model])) : ?>
 		<p class="manage">
 		    <a href="#" class="update"><?php echo Yii::$app->getModule('site')->t('MOD_SITE_MANAGE_UPDATE'); ?></a>
-		    <?php if (Yii::$app->user->checkAccess('deleteOwnPost', array('model' => $model)) || Yii::$app->user->checkAccess('deletePost')) { ?>
+		    <?php if (Yii::$app->user->can('deleteOwnPost', array('model' => $model)) || Yii::$app->user->can('deletePost')) { ?>
 		        <a href="<?php echo $this->context->module->getUrlView($model['id']); ?>" class="delete"><?php echo Yii::$app->getModule('site')->t('MOD_SITE_MANAGE_DELETE'); ?></a>
 			<?php } ?>
 		</p>

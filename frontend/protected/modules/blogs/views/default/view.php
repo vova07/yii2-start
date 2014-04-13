@@ -15,7 +15,7 @@ $this->params['page-id'] = 'blog';
 ?>
 <div class="page-header clearfix">
 	<h1 class="pull-left"><?php echo Html::encode($this->title); ?></h1>
-    <?php if (Yii::$app->user->checkAccess('updateOwnPost', ['model' => $model])) {
+    <?php if (Yii::$app->user->can('updateOwnPost', ['model' => $model])) {
         Modal::begin([
             'header' => '<h2>' . Yii::t('blogs', 'Редактировать статью') . '</h2>',
             'toggleButton' => [
@@ -48,7 +48,7 @@ $this->params['page-id'] = 'blog';
 
 echo $model['content'];
 
-if (Yii::$app->user->checkAccess('viewComment')) {
+if (Yii::$app->user->can('viewComment')) {
     echo Comments::widget([
         'model' => $model,
         'maxLevel' => Yii::$app->getModule('comments')->maxLevel

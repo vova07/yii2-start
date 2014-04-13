@@ -146,7 +146,7 @@ class Post extends ActiveRecord
 	 */
 	public static function findByIdAlias($id, $alias)
 	{
-		return static::find()->where(['and', 'id = :id', 'alias = :alias'], [':id' => $id, ':alias' => $alias])->one();
+		return static::findOne()->where(['and', 'id = :id', 'alias = :alias'], [':id' => $id, ':alias' => $alias])->one();
 	}
 
 	/**
@@ -155,7 +155,7 @@ class Post extends ActiveRecord
 	 */
 	public static function findPublishedByIdAlias($id, $alias)
 	{
-		return static::find()->where(['and', 'id = :id', 'alias = :alias'], [':id' => $id, ':alias' => $alias])->published()->one();
+		return static::findOne()->where(['and', 'id = :id', 'alias = :alias'], [':id' => $id, ':alias' => $alias])->published()->one();
 	}
 
 	/**
