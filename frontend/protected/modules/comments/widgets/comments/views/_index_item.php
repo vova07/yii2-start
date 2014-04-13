@@ -25,19 +25,19 @@ if ($model->isBanned) {
 		<p class="author">
 			<?= $model->author->getFio(true) ?>
 		</p>
-		<?php if ($model->isPublished && Yii::$app->user->checkAccess('createComment')) { ?>
+		<?php if ($model->isPublished && Yii::$app->user->can('createComment')) { ?>
 	    	<p class="manage">
 	    	    <span>&nbsp;&#8212;&nbsp;</span>
 	    	    <a href="#" class="reply" data-id="<?= $model['id'] ?>" data-level="<?= $level ?>">
 	    	        <?= Yii::t('comments', 'Ответить'); ?>
 	    	    </a>
-	    	    <?php if (Yii::$app->user->checkAccess('updateOwnComment', ['model' => $model])) { ?>
+	    	    <?php if (Yii::$app->user->can('updateOwnComment', ['model' => $model])) { ?>
 	    	    	<span>&nbsp;|&nbsp;</span>
 	    	    	<a href="#" class="update" data-id="<?= $model['id']; ?>" data-href="<?= Yii::$app->getUrlManager()->createUrl('/comments/' . $model['id']) ?>">
 	    	    	    <?= Yii::t('comments', 'Редактировать') ?>
 	    	    	</a>
 	    	    <?php } ?>
-	    	    <?php if (Yii::$app->user->checkAccess('deleteOwnComment', ['model' => $model])) { ?>
+	    	    <?php if (Yii::$app->user->can('deleteOwnComment', ['model' => $model])) { ?>
 	    	    	<span>&nbsp;|&nbsp;</span>
 	    	    	<a href="#" class="delete" data-id="<?= $model['id']; ?>" data-href="<?= Yii::$app->getUrlManager()->createUrl('/comments/' . $model['id']) ?>" data-confirm="<?= Yii::t('comments', 'Вы уверены что хотите удалить комментарий?') ?>">
 	    	    	    <?= Yii::t('comments', 'Удалить') ?>

@@ -11,7 +11,7 @@
 ?>
 <div id="comments-widget">
     <h3><?= $title ?></h3>
-    <?php if (Yii::$app->user->checkAccess('createComment')) { ?>
+    <?php if (Yii::$app->user->can('createComment')) { ?>
         <a href="#" class="btn btn-default create"><?= $createButtonTxt ?></a>
     <?php } ?>
     <div class="comments">
@@ -21,7 +21,7 @@
 	    	'maxLevel' => $maxLevel
 	    ]) ?>
     </div>
-    <?php if (Yii::$app->user->checkAccess('createComment')) { ?>
+    <?php if (Yii::$app->user->can('createComment')) { ?>
         <div class="hide">
             <?= $this->render('_form', [
                 'model' => $model,
