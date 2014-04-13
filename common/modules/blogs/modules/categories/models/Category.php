@@ -70,7 +70,7 @@ class Category extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public static function createQuery()
+	public static function find()
     {
         return new CategoryQuery(get_called_class());
     }
