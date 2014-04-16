@@ -90,7 +90,7 @@ class Comments extends Widget
 	public function registerClientScript()
 	{
 		$view = $this->getView();
-		if (Yii::$app->user->checkAccess('createComment')) {
+		if (Yii::$app->user->can('createComment')) {
 			CommentsAsset::register($view);
 			$view->registerJs("jQuery('#comment-form').comments();");
 		} else {

@@ -135,7 +135,7 @@ class DefaultController extends Controller
 		if (is_array($id)) {
 			$model = Comment::find()->where(['id' => $id])->all();
 		} else {
-			$model = Comment::find($id);
+			$model = Comment::findOne($id);
 		}
 		if ($model !== null) {
 			return $model;

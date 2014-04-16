@@ -125,7 +125,7 @@ class DefaultController extends Controller
 		if (is_array($id)) {
 			$model = Category::find()->where(['id' => $id])->all();
 		} else {
-			$model = Category::find($id);
+			$model = Category::findOne($id);
 		}
 		if ($model !== null) {
 			return $model;

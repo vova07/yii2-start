@@ -227,7 +227,7 @@ class DefaultController extends Controller
 		if (is_array($id)) {
 			$model = User::find()->where(['id' => $id])->all();
 		} else {
-			$model = User::find($id);
+			$model = User::findOne($id);
 		}
 		if ($model !== null) {
 			return $model;

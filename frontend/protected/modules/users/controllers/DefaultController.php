@@ -278,7 +278,7 @@ class DefaultController extends Controller
 	public function actionUpdate()
 	{
 		// Выбираем текущего пользователя.
-		if ($model = User::find(Yii::$app->user->id)) {
+		if ($model = User::findOne(Yii::$app->user->id)) {
 			$model->setScenario('update');
 
 			if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -299,7 +299,7 @@ class DefaultController extends Controller
 	public function actionDelete()
 	{
 		// Выбираем текущего пользователя.
-		if ($model = User::find(Yii::$app->user->id)) {
+		if ($model = User::findOne(Yii::$app->user->id)) {
 			$model->setScenario('delete');
 			if ($model->save(false)) {
 				// В случае успешного удаления данных, оповещаем пользователя об этом, и перенаправляем его на главную страницу.
@@ -315,7 +315,7 @@ class DefaultController extends Controller
 	public function actionPassword()
 	{
 		// Выбираем текущего пользователя.
-		if ($model = User::find(Yii::$app->user->id)) {
+		if ($model = User::findOne(Yii::$app->user->id)) {
 			$model->setScenario('password');
 
 			if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -378,7 +378,7 @@ class DefaultController extends Controller
 	 */
 	function actionDeleteAvatar()
 	{
-		$model = User::find(Yii::$app->user->id);
+		$model = User::findOne(Yii::$app->user->id);
 		$model->setScenario('delete-avatar');
 		$model->save(false);
 	}

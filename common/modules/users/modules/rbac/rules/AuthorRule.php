@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace common\modules\users\modules\rbac\rules;
 
@@ -10,12 +10,12 @@ class AuthorRule extends Rule
 	 * @inheritdoc
 	 */
 	public $name = 'author';
-	
+
 	/**
 	 * @inheritdoc
 	 */
-    public function execute($params, $data)
+    public function execute($item, $params)
     {
-        return $params['userId'] === $params['model']['author_id'];
+        return $params['user'] === $params['model']['author_id'];
     }
 }

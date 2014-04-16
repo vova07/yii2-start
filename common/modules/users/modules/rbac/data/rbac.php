@@ -1,159 +1,182 @@
 <?php
-
-use yii\rbac\Item;
-use common\modules\users\modules\rbac\rules\NotGuestRule;
-use common\modules\users\modules\rbac\rules\AuthorRule;
-
-$notGuest = new NotGuestRule();
-$author = new AuthorRule();
-
-return [
-    'rules' => [
-        $notGuest->name => serialize($notGuest),
-        $author->name => serialize($author)
-    ],
-    'items' => [
-        // Tasks
-        'createPost' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Cоздание записи',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'viewPost' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Просмотр записи',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'updatePost' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Редактирование записи',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'deletePost' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Удаление записи',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'createComment' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Cоздание комментария',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'viewComment' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Просмотр комментария',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'updateComment' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Редактирование комментария',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'deleteComment' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Удаление комментария',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'updateUser' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Редактирование пользователя',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'deleteUser' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Удаление пользователя',
-            'ruleName' => null,
-            'data' => null
-        ],
-        'updateOwnPost' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Редактирование своей записи',
-            'ruleName' => $author->name,
-            'data' => null
-        ],
-        'deleteOwnPost' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Удаление своей записи',
-            'ruleName' => $author->name,
-            'data' => null
-        ],
-        'updateOwnComment' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Редактирование своего комментария',
-            'ruleName' => $author->name,
-            'data' => null
-        ],
-        'deleteOwnComment' => [
-            'type' => Item::TYPE_OPERATION,
-            'description' => 'Удаление своего комментария',
-            'ruleName' => $author->name,
-            'data' => null
-        ],
-        // Roles
-        'guest' => [
-            'type' => Item::TYPE_ROLE,
-            'description' => 'Гость',
-            'children' => [
-                'viewPost',
-                'viewComment'
-            ],
-            'ruleName' => null,
-            'data' => null
-        ],
-        0 => [
-            'type' => Item::TYPE_ROLE,
-            'description' => 'Пользователь',
-            'children' => [
-                'guest',
-                'createPost',
-                'updateOwnPost',
-                'deleteOwnPost',
-                'createComment',
-                'updateOwnComment',
-                'deleteOwnComment'
-            ],
-            'ruleName' => $notGuest->name,
-            'data' => null
-        ],
-        3 => [
-            'type' => Item::TYPE_ROLE,
-            'description' => 'Модератор',
-            'children' => [
-                0,
-                'updatePost',
-                'deletePost',
-                'updateComment',
-                'deleteComment'
-            ],
-            'ruleName' => null,
-            'data' => null
-        ],
-        1 => [
-            'type' => Item::TYPE_ROLE,
-            'description' => 'Администратор',
-            'children' => [
-                3
-            ],
-            'ruleName' => null,
-            'data' => null
-        ],
-        2 => [
-            'type' => Item::TYPE_ROLE,
-            'description' => 'Супер-администратор',
-            'children' => [
-                1
-            ],
-            'ruleName' => null,
-            'data' => null
-        ],
-    ]
-];
+return array (
+  'items' => 
+  array (
+    'createPost' => 
+    array (
+      'type' => 2,
+      'description' => 'Cоздание записи',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'viewPost' => 
+    array (
+      'type' => 2,
+      'description' => 'Просмотр записи',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'updatePost' => 
+    array (
+      'type' => 2,
+      'description' => 'Редактирование записи',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'deletePost' => 
+    array (
+      'type' => 2,
+      'description' => 'Удаление записи',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'createComment' => 
+    array (
+      'type' => 2,
+      'description' => 'Cоздание комментария',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'viewComment' => 
+    array (
+      'type' => 2,
+      'description' => 'Просмотр комментария',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'updateComment' => 
+    array (
+      'type' => 2,
+      'description' => 'Редактирование комментария',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'deleteComment' => 
+    array (
+      'type' => 2,
+      'description' => 'Удаление комментария',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'updateUser' => 
+    array (
+      'type' => 2,
+      'description' => 'Редактирование пользователя',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'deleteUser' => 
+    array (
+      'type' => 2,
+      'description' => 'Удаление пользователя',
+      'ruleName' => NULL,
+      'data' => NULL,
+    ),
+    'updateOwnPost' => 
+    array (
+      'type' => 2,
+      'description' => 'Редактирование своей записи',
+      'ruleName' => 'author',
+      'data' => NULL,
+    ),
+    'deleteOwnPost' => 
+    array (
+      'type' => 2,
+      'description' => 'Удаление своей записи',
+      'ruleName' => 'author',
+      'data' => NULL,
+    ),
+    'updateOwnComment' => 
+    array (
+      'type' => 2,
+      'description' => 'Редактирование своего комментария',
+      'ruleName' => 'author',
+      'data' => NULL,
+    ),
+    'deleteOwnComment' => 
+    array (
+      'type' => 2,
+      'description' => 'Удаление своего комментария',
+      'ruleName' => 'author',
+      'data' => NULL,
+    ),
+    'guest' => 
+    array (
+      'type' => 1,
+      'description' => 'Гость',
+      'ruleName' => NULL,
+      'data' => NULL,
+      'children' => 
+      array (
+        0 => 'viewPost',
+        1 => 'viewComment',
+      ),
+    ),
+    0 => 
+    array (
+      'type' => 1,
+      'description' => 'Пользователь',
+      'ruleName' => 'notGuestRule',
+      'data' => NULL,
+      'children' => 
+      array (
+        0 => 'guest',
+        1 => 'createPost',
+        2 => 'updateOwnPost',
+        3 => 'deleteOwnPost',
+        4 => 'createComment',
+        5 => 'updateOwnComment',
+        6 => 'deleteOwnComment',
+      ),
+    ),
+    3 => 
+    array (
+      'type' => 1,
+      'description' => 'Модератор',
+      'ruleName' => NULL,
+      'data' => NULL,
+      'children' => 
+      array (
+        0 => 0,
+        1 => 'updatePost',
+        2 => 'deletePost',
+        3 => 'updateComment',
+        4 => 'deleteComment',
+      ),
+    ),
+    1 => 
+    array (
+      'type' => 1,
+      'description' => 'Администратор',
+      'ruleName' => NULL,
+      'data' => NULL,
+      'children' => 
+      array (
+        0 => 3,
+      ),
+    ),
+    2 => 
+    array (
+      'type' => 1,
+      'description' => 'Супер-администратор',
+      'ruleName' => NULL,
+      'data' => NULL,
+      'children' => 
+      array (
+        0 => 1,
+      ),
+      'assignments' => 
+      array (
+        1 => 
+        array (
+          'roleName' => 2,
+        ),
+      ),
+    ),
+  ),
+  'rules' => 
+  array (
+    'notGuestRule' => 'O:52:"common\\modules\\users\\modules\\rbac\\rules\\NotGuestRule":3:{s:4:"name";s:12:"notGuestRule";s:9:"createdAt";N;s:9:"updatedAt";N;}',
+    'author' => 'O:50:"common\\modules\\users\\modules\\rbac\\rules\\AuthorRule":3:{s:4:"name";s:6:"author";s:9:"createdAt";N;s:9:"updatedAt";N;}',
+  ),
+);

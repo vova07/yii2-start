@@ -219,7 +219,7 @@ class DefaultController extends Controller
 		if (is_array($id)) {
 			$model = Post::find()->where(['id' => $id])->all();
 		} else {
-			$model = Post::find($id);
+			$model = Post::findOne($id);
 		}
 		if ($model !== null) {
 			return $model;

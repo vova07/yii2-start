@@ -1,7 +1,8 @@
-<?php 
+<?php
 namespace common\modules\users\modules\rbac\components;
 
 use Yii;
+use yii\rbac\Role;
 
 /**
  * Файловый компонент модуля [[RBAC]]
@@ -17,10 +18,18 @@ class PhpManager extends \yii\rbac\PhpManager
 	 * @inheritdoc
 	 */
     public function init()
-    { 
-        parent::init(); 
-        if (!Yii::$app->user->isGuest) {
-            $this->assign(Yii::$app->user->identity->id, Yii::$app->user->identity->role_id);
+    {
+        parent::init();
+
+        $user = Yii::$app->getUser();
+        if (!$user->isGuest) {
+            $identity = $user->getIdentity();
+            if (!$this->getAssignment($identity->role_id, $identity->getId())) {
+                $role = new Role([
+                    'name' => $identity->role_id
+                ]);
+                $this->assign($role, $identity->getId());
+            }
         }
     }
 }
