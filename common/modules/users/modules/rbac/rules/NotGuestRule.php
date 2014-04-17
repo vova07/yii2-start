@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace common\modules\users\modules\rbac\rules;
 
@@ -15,7 +15,7 @@ class NotGuestRule extends Rule
 	/**
 	 * @inheritdoc
 	 */
-    public function execute($params, $data)
+    public function execute($user, $item, $params)
     {
         return !Yii::$app->user->isGuest;
     }
