@@ -18,7 +18,7 @@ $formOptions = [
     'enableClientValidation' => false,
     'enableAjaxValidation' => true,
     'validateOnChange' => false,
-    'beforeSubmit' => new JsExpression('function ($form) {tinymce.triggerSave(); return true;}')
+    'beforeValidate' => new JsExpression('function ($form, attribute, messages) { if (attribute.name === "content") { tinymce.triggerSave(); } return true; }')
 ];
 if (isset($method) && $method) {
     $formOptions['method'] = $method;
