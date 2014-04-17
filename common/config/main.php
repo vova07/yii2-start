@@ -40,9 +40,6 @@ return [
 			'class' => 'common\modules\users\modules\rbac\components\PhpManager',
 			'defaultRoles' => ['guest'],
 		],
-		'assetManager' => [
-            'linkAssets' => true,
-        ],
 		'i18n' => [
 			'translations' => [
 			    'users' => [
