@@ -358,7 +358,7 @@ class User extends ActiveRecord implements IdentityInterface
 			['email', 'email', 'on' => ['signup', 'resend', 'recovery', 'admin-update', 'admin-create']],
 			['email', 'string', 'max' => 100, 'on' => ['signup', 'resend', 'recovery', 'admin-update', 'admin-create']],
 			['email', 'unique', 'on' => ['signup', 'admin-update', 'admin-create']],
-			['email', 'exist', 'on' => ['resend', 'recovery']],
+			['email', 'exist', 'on' => ['resend', 'recovery'], 'message' => Yii::t('users', 'Пользователь с указанным адресом не существует.')],
 
 			// Пароль [[password]]
 			['password', 'required', 'on' => ['signup', 'login', 'password', 'admin-create']],
