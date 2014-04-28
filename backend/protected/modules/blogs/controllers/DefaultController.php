@@ -184,7 +184,7 @@ class DefaultController extends Controller
 	 */
 	function actionDeleteImage()
 	{
-		if ($id = Yii::$app->request->getDelete('id')) {
+		if ($id = Yii::$app->request->getBodyParam('id')) {
 			$model = $this->findModel($id);
 			$model->setScenario('delete-image');
 			$model->save(false);
@@ -198,7 +198,7 @@ class DefaultController extends Controller
 	 */
 	function actionDeletePreview()
 	{
-		if ($id = Yii::$app->request->getDelete('id')) {
+		if ($id = Yii::$app->request->getBodyParam('id')) {
 			$model = $this->findModel($id);
 			$model->setScenario('delete-preview');
 			$model->save(false);

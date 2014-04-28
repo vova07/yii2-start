@@ -172,7 +172,7 @@ class DefaultController extends Controller
 	 */
 	function actionDeleteAvatar()
 	{
-		if ($id = Yii::$app->request->getDelete('id')) {
+		if ($id = Yii::$app->request->getBodyParam('id')) {
 			$model = $this->findModel($id);
 			$model->setScenario('delete-avatar');
 			$model->save(false);

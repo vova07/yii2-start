@@ -75,7 +75,7 @@ class DefaultController extends Controller
 	public function actionUpdate($id)
 	{
 		$model = $this->findModel($id);
-		if (Yii::$app->user->checkAccess('updateOwnComment', ['model' => $model])) {
+		if (Yii::$app->user->can('updateOwnComment', ['model' => $model])) {
 			$model->setScenario('update');
 			Yii::$app->response->format = Response::FORMAT_JSON;
 
@@ -95,7 +95,7 @@ class DefaultController extends Controller
 	public function actionDelete($id)
 	{
 		$model = $this->findModel($id);
-		if (Yii::$app->user->checkAccess('deleteOwnComment', ['model' => $model])) {
+		if (Yii::$app->user->can('deleteOwnComment', ['model' => $model])) {
 			$model->setScenario('delete');
 			if ($model->save(false)) {
 				Yii::$app->response->format = Response::FORMAT_JSON;

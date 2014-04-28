@@ -136,7 +136,7 @@ class DefaultController extends Controller
 	public function actionUpdate($id, $alias)
 	{
 		if ($model = Post::findPublishedByIdAlias($id, $alias)) {
-			if (Yii::$app->user->checkAccess('updateOwnPost', ['model' => $model])) {
+			if (Yii::$app->user->can('updateOwnPost', ['model' => $model])) {
 				$model->setScenario('update');
 				if ($model->load(Yii::$app->request->post()) && $model->save()) {
 					return $this->redirect(['view', 'id' => $model['id'], 'alias' => $model['alias']]);
@@ -158,7 +158,7 @@ class DefaultController extends Controller
 	public function actionDelete($id, $alias)
 	{
 		if ($model = Post::findByIdAlias($id, $alias)) {
-			if (Yii::$app->user->checkAccess('deleteOwnPost', ['model' => $model])) {
+			if (Yii::$app->user->can('deleteOwnPost', ['model' => $model])) {
 				return $model->delete();
 			} else {
 				throw new HttpException(403);
@@ -173,7 +173,7 @@ class DefaultController extends Controller
 	 */
 	function actionDeleteImage()
 	{
-		if ($id = Yii::$app->request->getDelete('id')) {
+		if ($id = Yii::$app->request->getBodyParam('id')) {
 			if ($model = Post::find((int) $id)) {
 				$model->setScenario('delete-image');
 				$model->save(false);
@@ -190,7 +190,7 @@ class DefaultController extends Controller
 	 */
 	function actionDeletePreview()
 	{
-		if ($id = Yii::$app->request->getDelete('id')) {
+		if ($id = Yii::$app->request->getBodyParam('id')) {
 			if ($model = Post::find((int) $id)) {
 				$model->setScenario('delete-preview');
 				$model->save(false);
