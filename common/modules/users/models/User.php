@@ -504,6 +504,10 @@ class User extends ActiveRecord implements IdentityInterface
 				if ($this->scenario === 'password') {
 					$this->password_hash = Security::generatePasswordHash($this->password);
 				}
+				// При редактировании пароля пользователя в админке, генерируем password_hash
+				if ($this->scenario === 'admin-update' && !empty($this->password)) {
+					$this->password_hash = Security::generatePasswordHash($this->password);
+				}
 				// Удаляем аватар
 				if ($this->scenario === 'delete-avatar') {
 					$avatar = Yii::$app->getModule('users')->avatarPath($this->avatar_url);
