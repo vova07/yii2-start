@@ -40,15 +40,15 @@ echo GridView::widget([
         'email',
         [
             'attribute' => 'status_id',
-            'value' => function ($model) {
-                return $model->status;
+            'value' => function ($model) use (&$statusArray) {
+                return $statusArray[$model->status];
             },
             'filter' => Html::activeDropDownList($searchModel, 'status_id', $statusArray, ['class' => 'form-control', 'prompt' => Yii::t('users', 'Статус')])
         ],
         [
             'attribute' => 'role_id',
-            'value' => function ($model) {
-                return $model->role;
+            'value' => function ($model) use (&$roleArray) {
+                return $roleArray[$model->role];
             },
             'filter' => Html::activeDropDownList($searchModel, 'role_id', $roleArray, ['class' => 'form-control', 'prompt' => Yii::t('users', 'Роль')])
         ],
