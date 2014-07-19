@@ -386,7 +386,7 @@ class Post extends ActiveRecord
 	/**
 	 * @inheritdoc
 	 */
-	public function afterSave($insert)
+	public function afterSave($insert,$changedAttributes)
 	{
 		// Сохраняем категории поста.
 		if ($this->categoryIds !== $this->_oldCategoryIds) {

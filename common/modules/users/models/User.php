@@ -4,7 +4,6 @@ namespace common\modules\users\models;
 use Yii;
 use yii\base\ModelEvent;
 use yii\db\ActiveRecord;
-use yii\helpers\Security;
 use yii\helpers\ArrayHelper;
 use yii\web\IdentityInterface;
 use yii\behaviors\TimestampBehavior;
@@ -324,7 +323,7 @@ class User extends ActiveRecord implements IdentityInterface
 	 */
 	public function validatePassword($password)
 	{
-		return Security::validatePassword($password, $this->password_hash);
+		return Yii::$app->getSecurity()->validatePassword($password, $this->password_hash);
 	}
 
 	/**
@@ -476,7 +475,7 @@ class User extends ActiveRecord implements IdentityInterface
 			if ($this->isNewRecord) {
 				// Хэшируем пароль
 				if (!empty($this->password)) {
-					$this->password_hash = Security::generatePasswordHash($this->password);
+					$this->password_hash = Yii::$app->getSecurity()->generatePasswordHash($this->password);
 				}
 				// Задаём статус записи
 				if (!$this->status_id) {
@@ -487,26 +486,26 @@ class User extends ActiveRecord implements IdentityInterface
 					}
 				}
 				// Генерируем уникальный ключ
-				$this->auth_key = Security::generateRandomKey();
+				$this->auth_key = Yii::$app->getSecurity()->generateRandomKey();
 			} else {
 				// Активируем пользователя если был отправлен запрос активации
 				if ($this->scenario === 'activation') {
 					$this->status_id = self::STATUS_ACTIVE;
-					$this->auth_key = Security::generateRandomKey();
+					$this->auth_key = Yii::$app->getSecurity()->generateRandomKey();
 				}
 				// Обновляем пароль и ключ если был отправлен запрос восстановления пароля
 				if ($this->scenario === 'recovery') {
-					$this->password = Security::generateRandomKey(8);
-					$this->auth_key = Security::generateRandomKey();
-					$this->password_hash = Security::generatePasswordHash($this->password);
+					$this->password = Yii::$app->getSecurity()->generateRandomKey(8);
+					$this->auth_key = Yii::$app->getSecurity()->generateRandomKey();
+					$this->password_hash = Yii::$app->getSecurity()->generatePasswordHash($this->password);
 				}
 				// Обновляем пароль если был отправлен запрос для его смены
 				if ($this->scenario === 'password') {
-					$this->password_hash = Security::generatePasswordHash($this->password);
+					$this->password_hash = Yii::$app->getSecurity()->generatePasswordHash($this->password);
 				}
 				// При редактировании пароля пользователя в админке, генерируем password_hash
 				if ($this->scenario === 'admin-update' && !empty($this->password)) {
-					$this->password_hash = Security::generatePasswordHash($this->password);
+					$this->password_hash = Yii::$app->getSecurity()->generatePasswordHash($this->password);
 				}
 				// Удаляем аватар
 				if ($this->scenario === 'delete-avatar') {
@@ -528,7 +527,7 @@ class User extends ActiveRecord implements IdentityInterface
 	/**
 	 * @inheritdoc
 	 */
-	public function afterSave($insert)
+	public function afterSave($insert,$changedAttributes)
 	{
 		// Удаляем все записи пользователя.
 		if ($this->scenario === 'delete') {
