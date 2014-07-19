@@ -527,7 +527,7 @@ class User extends ActiveRecord implements IdentityInterface
 	/**
 	 * @inheritdoc
 	 */
-	public function afterSave($insert)
+	public function afterSave($insert,$changedAttributes)
 	{
 		// Удаляем все записи пользователя.
 		if ($this->scenario === 'delete') {
