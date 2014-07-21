@@ -5,6 +5,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\HttpException;
 use yii\web\Response;
+use yii\web\Request;
 use yii\filters\VerbFilter;
 use yii\widgets\ActiveForm;
 use common\modules\blogs\models\Post;
@@ -105,6 +106,19 @@ class DefaultController extends Controller
 		if ($model = Post::findPublishedByIdAlias($id, $alias)) {
 			$model->setScenario('update');
 			$categoryArray = Category::getCategoryArray();
+			
+			if(!Yii::$app->request->cookies['count']) {
+		
+			$cookie = Yii::$app->response->cookies->add(new \yii\web\Cookie([
+			'name' => 'count',
+			'expire' => time()+3600
+
+		 ]));
+           
+		    $post = Post::findOne($id);
+            $post->updateCounters(['views' => 1]);
+			
+		}
 
 			return $this->render('view', [
 				'model' => $model,
