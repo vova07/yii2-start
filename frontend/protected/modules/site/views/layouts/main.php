@@ -1,7 +1,7 @@
 <?php
 /**
  * Основной шаблон frontend-приложения.
- * @var yii\base\View $this Представление
+ * @var yii\web\View $this Представление
  * @var string $content Контент
  * @var array $params Основные параметры представления
  */
