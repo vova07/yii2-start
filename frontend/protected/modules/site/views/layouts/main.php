@@ -14,7 +14,6 @@ use frontend\modules\site\widgets\alert\Alert;
 $this->beginPage(); ?>
   <!DOCTYPE html>
   <html lang="<?= Yii::$app->language ?>">
-  <html>
     <head>
       <?= $this->render('//layouts/head'); ?>
     </head>
