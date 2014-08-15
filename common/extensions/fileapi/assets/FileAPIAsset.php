@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class FileAPIAsset extends AssetBundle
 {
-	public $sourcePath = '@common/extensions/fileapi/assets';
+	public $sourcePath = '@fileapi/assets';
 	public $js = [
 	    'vendor/jquery.fileapi/FileAPI/FileAPI.min.js',
 	    'vendor/jquery.fileapi/jquery.fileapi.min.js'
