@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class FileAPIAdvancedCropAsset extends AssetBundle
 {
-	public $sourcePath = '@common/extensions/fileapi/assets';
+	public $sourcePath = '@fileapi/assets';
 	public $css = [
 	    'vendor/jquery.fileapi/the-modal/the-modal.css',
 	    'vendor/jquery.fileapi/jcrop/jquery.Jcrop.min.css'

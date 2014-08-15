@@ -19,12 +19,19 @@
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
 		"yiisoft/yii2-bootstrap": "*",
-		"yiisoft/yii2-swiftmailer": "*"
+		"yiisoft/yii2-swiftmailer": "*",
+        "rubaxa/fileapi": "*"
     },
     "require-dev": {
     	"yiisoft/yii2-debug": "*",
     	"yiisoft/yii2-gii": "*"
     },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/RubaXa/jquery.fileapi"
+        }
+    ],
 	"scripts": {
 		"post-create-project-cmd": [
 		    "yii\\composer\\Installer::setPermission"

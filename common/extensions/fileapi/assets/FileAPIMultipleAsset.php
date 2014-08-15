@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
  */
 class FileAPIMultipleAsset extends AssetBundle
 {
-	public $sourcePath = '@common/extensions/fileapi/assets';
+	public $sourcePath = '@fileapi/assets';
 	public $css = [
 	    'css/multiple.css'
 	];
