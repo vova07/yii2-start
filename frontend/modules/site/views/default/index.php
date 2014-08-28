@@ -78,7 +78,7 @@ $this->params['noTitle'] = true; ?>
                         <p>Run command: <code>php requirements.php</code> and check the requirements.</p>
                     </li>
                     <li>
-                        <p>Run command: <code>init</code> to initialize the application with a specific environment.</p>
+                        <p>Run command: <code>php init</code> to initialize the application with a specific environment.</p>
                     </li>
                     <li>
                         <p>Create a new database and adjust it configuration in <code>common/config/db.php</code> accordingly.</p>

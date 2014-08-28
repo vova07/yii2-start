@@ -9,7 +9,7 @@ If you do not have Composer, you may install it by following the instructions at
 1. Run the following command: `php composer.phar create-project --prefer-dist --stability=dev vova07/yii2-start yii2-start` to install Yii2-Start.
 2. Run command: `cd /my/path/to/yii2-start/` and go to main application directory.
 3. Run command: `php requirements.php` and check the requirements.
-4. Run command: `init` to initialize the application with a specific environment.
+4. Run command: `php init` to initialize the application with a specific environment.
 5. Create a new database and adjust it configuration in `common/config/db.php` accordingly.
 6. Apply migrations with console commands:
 - `php yii migrate --migrationPath=@vova07/users/migrations`
