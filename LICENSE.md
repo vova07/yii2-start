@@ -1,7 +1,7 @@
-The Yii framework is free software. It is released under the terms of
+The Yii2-start application is free software. It is released under the terms of
 the following BSD License.
 
-Copyright © 2008 by Yii Software LLC (http://www.yiisoft.com)
+Copyright © 2014 by vova07 (https://github.com/vova07)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

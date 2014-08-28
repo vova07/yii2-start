@@ -1,157 +1,30 @@
-Yii2-Start App
-=========================
-Демо блог, реализован на основе Framework Yii 2. Он предназначен для демонстративных и обучающих целей, но в тоже время, может быть использован как основа для своих проектов на framework-е Yii 2.
+Yii2-start
+==========
 
-Данные авторизации на демо сайте
---------------------------------
-- Логин: `userX` или `userXX`
-- Пароль: `user0X` или `userXX`
+Installation and getting started:
+---------------------------------
 
+If you do not have Composer, you may install it by following the instructions at getcomposer.org.
 
-Структура папок
----------------
-```
-common
-	config/				Общие конфигурационные файлы
-	behaviors/			Общие поведения
-	data/				Дамп БД и другие данные связаны с БД
-	extensions/			Общие расширения
-	helpers/			Общие 'helper' классы
-	mails/				Общие шаблоны писем
-	modules/			Общие модули
-console
-	config/             Консольные конфигурационные файлы
-	controllers/        Консольные котролеры (команды)
-	migrations/         Общая папка миграций
-	runtime/            Файлы сгенерированые во время выполнения консольного-приложения
-backend
-    protected
-        config/			Администраторские конфигурационные файлы
-        modules/		Администраторские модули
-        runtime/		Файлы сгенерированые во время выполнения админ-приложения
-    web
-	    assets/			JS, CSS файлы с публичным доступом
-frontend
-    protected
-        config/			Конфигурационные файлы публичного-приложения
-        modules/		Публичные модули
-        runtime/		Файлы сгенерированые во время выполнения публичного-приложения
-    web
-	    assets/			JS, CSS файлы с публичным доступом
-statisc/
-vendor/                 Стороние библиотеки
-environments/			Файлы доступных типов (сред) разработки
-```
+1. Run the following command: `php composer.phar create-project --prefer-dist --stability=dev vova07/yii2-start yii2-start` to install Yii2-Start.
+2. Run command: `cd /my/path/to/yii2-start/` and go to main application directory.
+3. Run command: `php requirements.php` and check the requirements.
+4. Run command: `init` to initialize the application with a specific environment.
+5. Create a new database and adjust it configuration in `common/config/db.php` accordingly.
+6. Apply migrations with console commands:
+- `php yii migrate --migrationPath=@vova07/users/migrations`
+- `php yii migrate --migrationPath=@vova07/blogs/migrations`
+- This will create tables needed for the application to work.
+7. Set document roots of your Web server: `/path/to/yii2-start/`
+- Use the URL `http://yii2-start/` to access application frontend.
+- Use the URL `http://yii2-start/backend/` to access application backend.
 
-Установка
----------
+Notes:
+------
 
-### Установка из архива или .git репозитория
+By default will be created one super admin user with login `admin` and password `admin12345`, you can use this data to sing in application frontend and backend.
 
-- Скачиваем репозиторий в виде .zip архива, или клонируем репозиторий.
-- Распаковываем архив в нужную папке на локальной машине. (В случае клонирования .git репозитория этот шаг пропускаем).
-- Выполняем команду:
-
-~~~
-cd path/to/app
-php composer.phar install
-~~~
-
-для пользователей `Windows`:
-
-~~~
-cd path/to/app
-composer install --prefer-dist
-~~~
-
-- Открываем в браузерной строке страницу проверки совместимости: `http://my-site.com/requirements.php` и убеждаемся что наш сервер соответствует всем требованием.
-- Выполняем команду инициализации `init` приложения, и выбираем нужный вариант установки. (`dev` - для разработки, `prod` - для рабочего проекта).
-
-~~~
-cd path/to/app
-php init
-~~~
-
-для пользователей `Windows`:
-
-~~~
-cd path/to/app
-init
-~~~
-
-- Создаём новую базу данных.
-- Открываем файл `my/app/common/config/params.php` если мы запускаем рабочий проект или `my/app/common/config/params-local.php` если работаем на локалхосте, и в разделе `params[components.db]` меняем доступы к БД на наши.
-- Запускаем миграции для создания структуры нашей БД. Для этого выполняем команду:
-
-~~~
-cd path/to/app
-php yii migrate
-~~~
-
-для пользователей `Windows`:
-
-~~~
-cd path/to/app
-yii migrate
-~~~
-
-- В случае необходимости демо данных, выболняем импорт дампа БД который находится в папке `my/app/common/data/data.sql`.
-- После того как все установлено, нам необходимо определить корневую папку для наших приложений:
-
-1. Для frontend `my/app/frontend/web` определяем адрес `http://frontend`
-2. Для backend `my/app/backend/web` определяем адрес `http://backend`
-3. Для statics `my/app/statics/web` определяем адрес `http://statics`
-
-- После этого в файле `my/app/common/config/params.php` правим значение доменов на наши:
-
-~~~
-'siteDomain' => 'http://frontend',
-'staticsDomain' => 'http://statics'
-~~~
-
-Установка закончена, и наше приложение готово к использованию.
-
-По умолчанию у нас есть созданый пользователь с правами `Super-Admin`, для входа в админ-панель, и управления приложением.
-Его данные для авторизации:
-- Логин: `admin`
-- Пароль: `admin12345`
-
-В случае установки демо данных создаются дополнительные пользователи с обынчми правами.
-Их данные для авторизации:
-- Логин: `userX` или `userXX`
-- Пароль: `user0X` или `usersXX`
-
-### Примечания
-
-*Примечание:* В случае использования "OpenServer" в качестве локального сервера, при ошибки "PDO expect driver", или другие подобные ошибки касающийся БД и PDO драйверов, нужно выполнять миграции из консоли самого "OpenServer". Вкладка: `Дополнительно --> Консоль`
-
-*Примечание:* В случае использования "OpenServer" в качестве локального сервера на "Windows" системе, при ошибках связаных с созданием `symlink`-ок нужно запустить сервер от имени администратора.
-
-*Примечание:* В случае использования "OpenServer" в качестве локального сервера на "Windows" системе, при ошибках вызванные в момент установки зависимостей с помощью composer-а, связанные с расширением `mb_string` или другими расширениями PHP, в том числе ошибки касающийся версии PHP, нужно в конфигурационном файле "PHP Модуля" сервера отредактировать путь к папке с расширениями PHP.
-Инструкция:
-- Заходим в корневую папку `Open-Server`.
-- Находим файл: `userdata/config/PHP-X.X.XX_php.ini` - где `X-X-XX` это версия нашего PHP модуля.
-- Создаём копию данного файла в директорию: `modules/php/PHP-X.X.XX` - где `X-X-XX` это версия нашего PHP модуля. В итоге получаем такой файл: `modules/php/PHP-X.X.XX/PHP-X.X.XX_php.ini`.
-- Переименовываем файл `modules/php/PHP-X.X.XX/PHP-X.X.XX_php.ini` в `modules/php/PHP-X.X.XX/php.ini`.
-- Открываем переименованный файл `php.ini` и правим путь к папке с расширениями PHP: `extension_dir = "%sprogdir%/modules/php/%phpdriver%/ext/"` на `extension_dir = "C:\путь\до\OpenServer\modules\php\PHP-X.X.XX\ext\"` где `X-X-XX` это версия нашего PHP модуля.
-- Сохраняем файл.
-- Запускаем composer.
-- Подтверждаем нажатием на "OK" три ошибки которые появятся в начале выполнения команд composer-а. (Это действие нужно будет повторять каждый раз когда данные уведомления будут всплывать.)
-
-*Примечание:* В случае использования OS `Widnows XP`, вам нужно отключить `symlink`-и. Для этого, вы должны в файле `my/app/common/config/main.php` прописать для  `linkAssets` значение `false`:
-
-~~~
-'assetManager' => [
-    'linkAssets' => false
-]
-~~~
-
-*Примечание:* В случае необходимости подключения `debug` модуля, вы должны прописать в правила `UrlManager`-а маршрут для данного модуля:
-
-~~~
-'urlManager' => [
-	'rules' => [
-		'<_m:debug>/<_c:\w+>/<_a:\w+>' => '<_m>/<_c>/<_a>',
-	]
-]
-~~~
+Themes:
+-------
+- Application backend it's based on "AdminLTE" template. More detail about this nice template you can find here.
+- Application frontend it's based on "Flat Theme". More detail about this nice theme you can find here.

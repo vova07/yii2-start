@@ -1,0 +1,39 @@
+/********************* Шаблон (Template) *********************/
+
+/*** Основные правила (Main rules) ***/
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*** Общие правила (Common rules) ***/
+#supercontainer, #header, #content, #footer {
+  clear: both;
+
+  .clearfix();
+}
+
+#supercontainer, #content, #footer {
+  overflow: hidden;
+}
+
+/*** Глобальная обёртка (Supercontainer) ***/
+#supercontainer {
+  min-height: 100%;
+  margin-bottom: -61px;
+  padding-bottom: 81px;
+  z-index: 1;
+  width: 100%;
+}
+
+/*** Контент (Content) ***/
+
+/*** Подвал (Footer) ***/
+#footer {
+  border-top: 1px solid #ddd;
+  position: relative;
+  line-height: 60px;
+  height: 60px;
+  z-index: 2;
+}

@@ -1,14 +1,16 @@
 {
 	"name": "vova07/yii2-start",
-	"description": "Yii2-Start приложение.",
-	"keywords": ["yii2", "app", "yii2 blog", "yii2 users", "yii2 comments"],
+	"description": "Yii2-Start it's a small Yii 2 application template for your fast project start.",
+	"keywords": ["yii2", "yii 2", "application", "start", "bootstrap"],
 	"homepage": "http://yii2-start.find-freelancer.pro",
 	"type": "project",
-	"support": {
-		"issues": "https://github.com/vova07/yii2-start/issues?state=open",
-		"source": "https://github.com/vova07/yii2-start"
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/vova07/yii2-start/issues?q=is%3Aopen",
+        "forum": "http://yiiframework.ru/forum/viewtopic.php?f=28&t=16414",
+        "source": "https://github.com/vova07/yii2-start"
     },
-	"authors": [
+    "authors": [
         {
             "name": "Vasile Crudu",
             "email": "bazillio07@yandex.ru"
@@ -19,7 +21,8 @@
 		"php": ">=5.4.0",
 		"yiisoft/yii2": "*",
 		"yiisoft/yii2-bootstrap": "*",
-		"yiisoft/yii2-swiftmailer": "*"
+        "vova07/yii2-start-users-module": "*",
+        "vova07/yii2-start-blogs-module": "*"
     },
     "require-dev": {
     	"yiisoft/yii2-debug": "*",
@@ -27,23 +30,18 @@
     },
 	"scripts": {
 		"post-create-project-cmd": [
-		    "yii\\composer\\Installer::setPermission"
-        ]
-	},
-	"config": {
-		"preferred-install": "dist"
+			"yii\\composer\\Installer::setPermission"
+		]
 	},
 	"extra": {
-		"yii-install-writable": [
-			"backend/protected/runtime",
+		"writable": [
+			"backend/runtime",
 			"backend/web/assets",
-
-			"common/data",
 
 			"console/runtime",
 			"console/migrations",
 
-			"frontend/protected/runtime",
+			"frontend/runtime",
 			"frontend/web/assets"
 		]
 	}

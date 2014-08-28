@@ -1,0 +1,8 @@
+# Mod_Rewrite
+<IfModule mod_rewrite.c>
+    # If a directory or a file exists, use the request directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Otherwise forward the request to frontend/web/index.php
+    RewriteRule ^(.*)$ /frontend/web/index.php
+</IfModule>
