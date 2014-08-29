@@ -26,5 +26,5 @@ By default will be created one super admin user with login `admin` and password 
 
 Themes:
 -------
-- Application backend it's based on "AdminLTE" template. More detail about this nice template you can find here.
-- Application frontend it's based on "Flat Theme". More detail about this nice theme you can find here.
+- Application backend it's based on "AdminLTE" template. More detail about this nice template you can find [here](http://www.bootstrapstage.com/admin-lte/).
+- Application frontend it's based on "Flat Theme". More detail about this nice theme you can find [here](http://shapebootstrap.net/item/flat-theme-free-responsive-multipurpose-site-template/).
