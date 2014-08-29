@@ -44,7 +44,9 @@
 			"frontend/runtime",
 			"frontend/web/assets",
 
-            "statics"
+            "statics",
+
+            "cache"
 		]
 	}
 }
