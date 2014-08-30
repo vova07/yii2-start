@@ -1,6 +1,16 @@
 Yii2-start
 ==========
 
+DEMO:
+-----
+
+Frontend: [http://yii2-start.find-freelancer.pro](http://yii2-start.find-freelancer.pro)
+Backend: [http://yii2-start.find-freelancer.pro/backend/](http://yii2-start.find-freelancer.pro/backend/)
+
+Authentication:
+Login: `demo`
+Password: `demo12345`
+
 Installation and getting started:
 ---------------------------------
 
