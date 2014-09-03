@@ -20,7 +20,8 @@ class ThemeAsset extends AssetBundle
     public $css = [
         'css/font-awesome.min.css',
         'css/ionicons.min.css',
-        'css/AdminLTE.css'
+        'css/AdminLTE.css',
+        'css/custom.css'
     ];
 
     public $js = [
