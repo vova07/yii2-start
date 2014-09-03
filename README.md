@@ -28,7 +28,7 @@ If you do not have Composer, you may install it by following the instructions at
 - You also can use database dump `db.sql` from `my/path/to/yii2-start/common/data`, but however I recommend to use migrations.
 7. Set document roots of your Web server:
 
-For Apache:
+### For Apache: ###
 
 ```
 <VirtualHost *:80>
@@ -44,9 +44,9 @@ For Apache:
 - Use the URL `http://yii2-start.domain` to access application frontend.
 - Use the URL `http://yii2-start.domain/backend/` to access application backend.
 
-For Nginx:
+### For Nginx: ###
 
-- Frontend
+** Frontend **
 
 ```
 server {
@@ -94,7 +94,7 @@ server {
 }
 ```
 
-- Backend
+** Backend **
 
 ```
 server {
@@ -142,7 +142,7 @@ server {
 }
 ```
 
-*** Remove `'baseUrl' => '/backend'` from `/my/path/to/yii2-start/backend/config/main.php`. ***
+** Remove `'baseUrl' => '/backend'` from `/my/path/to/yii2-start/backend/config/main.php`. **
 
 - Use the URL `http://yii2-start.domain` to access application frontend.
 - Use the URL `http://backend.yii2-start.domain` to access application backend.
