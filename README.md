@@ -25,9 +25,127 @@ If you do not have Composer, you may install it by following the instructions at
 - `php yii migrate --migrationPath=@vova07/users/migrations`
 - `php yii migrate --migrationPath=@vova07/blogs/migrations`
 - This will create tables needed for the application to work.
-7. Set document roots of your Web server: `/path/to/yii2-start/`
-- Use the URL `http://yii2-start/` to access application frontend.
-- Use the URL `http://yii2-start/backend/` to access application backend.
+- You also can use database dump `db.sql` from `my/path/to/yii2-start/common/data`, but however I recommend to use migrations.
+7. Set document roots of your Web server:
+
+For Apache:
+
+```
+<VirtualHost *:80>
+	ServerName www.yii2-start.domain # You need to change it to your own domain
+	ServerAlias yii2-start.domain # You need to change it to your own domain
+	DocumentRoot /my/path/to/yii2-start # You need to change it to your own path
+	<Directory /my/path/to/yii2-start> # You need to change it to your own path
+		AllowOverride All
+	</Directory>
+</VirtualHost>
+```
+
+- Use the URL `http://yii2-start.domain` to access application frontend.
+- Use the URL `http://yii2-start.domain/backend/` to access application backend.
+
+For Nginx:
+
+- Frontend
+
+```
+server {
+    charset utf-8;
+    client_max_body_size 128M;
+
+    listen 80; ## listen for ipv4
+    # listen [::]:80 ipv6only=on; ## listen for ipv6
+
+    set $yii2StartRoot '/my/path/to/yii2-start'; ## You need to change it to your own path
+
+    server_name yii2-start.domain; ## You need to change it to your own domain
+    root $yii2StartRoot/frontend/web;
+    index index.php;
+
+    #access_log  $yii2StartRoot/log/frontend/access.log;
+    #error_log   $yii2StartRoot/log/frontend/error.log;
+
+    location / {
+        # Redirect everything that isn't a real file to index.php
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location /statics {
+        alias $yii2StartRoot/statics/web/;
+    }
+
+    # uncomment to avoid processing of calls to non-existing static files by Yii
+    #location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
+    #    try_files $uri =404;
+    #}
+    #error_page 404 /404.html;
+
+    location ~ \.php$ {
+        #include fastcgi_params;
+        include fastcgi.conf;
+        fastcgi_pass   127.0.0.1:9000;
+        #fastcgi_pass unix:/var/run/php5-fpm.sock;
+        try_files $uri =404;
+    }
+
+    location ~ /\.(ht|svn|git) {
+        deny all;
+    }
+}
+```
+
+- Backend
+
+```
+server {
+    charset utf-8;
+    client_max_body_size 128M;
+
+    listen 80; ## listen for ipv4
+    # listen [::]:80 ipv6only=on; ## listen for ipv6
+
+    set $yii2StartRoot '/my/path/to/yii2-start'; ## You need to change it to your own path
+
+    server_name backend.yii2-start.domain; ## You need to change it to your own domain
+    root $yii2StartRoot/backend/web;
+    index index.php;
+
+    #access_log  $yii2StartRoot/log/backend/access.log;
+    #error_log   $yii2StartRoot/log/backend/error.log;
+
+    location / {
+        # Redirect everything that isn't a real file to index.php
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location /statics {
+        alias $yii2StartRoot/statics/web/;
+    }
+
+    # uncomment to avoid processing of calls to non-existing static files by Yii
+    #location ~ \.(js|css|png|jpg|gif|swf|ico|pdf|mov|fla|zip|rar)$ {
+    #    try_files $uri =404;
+    #}
+    #error_page 404 /404.html;
+
+    location ~ \.php$ {
+        #include fastcgi_params;
+        include fastcgi.conf;
+        fastcgi_pass   127.0.0.1:9000;
+        #fastcgi_pass unix:/var/run/php5-fpm.sock;
+        try_files $uri =404;
+    }
+
+    location ~ /\.(ht|svn|git) {
+        deny all;
+    }
+}
+```
+
+*** Remove `'baseUrl' => '/backend'` from `/my/path/to/yii2-start/backend/config/main.php`. ***
+
+- Use the URL `http://yii2-start.domain` to access application frontend.
+- Use the URL `http://backend.yii2-start.domain` to access application backend.
 
 Notes:
 ------
