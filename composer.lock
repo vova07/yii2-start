@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RubaXa/jquery.fileapi.git",
-                "reference": "21bea1fed3696ffec104266d13eca7fa915c2bf6"
+                "reference": "88adb4c1e57ab81815457776a3202ad3805c8ebc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RubaXa/jquery.fileapi/zipball/21bea1fed3696ffec104266d13eca7fa915c2bf6",
-                "reference": "21bea1fed3696ffec104266d13eca7fa915c2bf6",
+                "url": "https://api.github.com/repos/RubaXa/jquery.fileapi/zipball/88adb4c1e57ab81815457776a3202ad3805c8ebc",
+                "reference": "88adb4c1e57ab81815457776a3202ad3805c8ebc",
                 "shasum": ""
             },
             "type": "library",
@@ -136,7 +136,7 @@
                 "jquery",
                 "multiupload"
             ],
-            "time": "2014-08-21 18:57:00"
+            "time": "2014-09-04 09:48:58"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "037ccb424be589c123d5c920dc665840e1e2caf7"
+                "reference": "af5f2213f066159e4bc51c627c4a853fec6ddc0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/037ccb424be589c123d5c920dc665840e1e2caf7",
-                "reference": "037ccb424be589c123d5c920dc665840e1e2caf7",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/af5f2213f066159e4bc51c627c4a853fec6ddc0f",
+                "reference": "af5f2213f066159e4bc51c627c4a853fec6ddc0f",
                 "shasum": ""
             },
             "replace": {
@@ -239,7 +239,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-09-03 05:39:52"
+            "time": "2014-09-04 02:00:29"
         },
         {
             "name": "vova07/yii2-fileapi-widget",
@@ -590,12 +590,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "595e4b360480d91448dc19e32ecb32cc7a877448"
+                "reference": "2e23e14e13e0d12bf1b629da1961ffce0c5c1fe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/595e4b360480d91448dc19e32ecb32cc7a877448",
-                "reference": "595e4b360480d91448dc19e32ecb32cc7a877448",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2e23e14e13e0d12bf1b629da1961ffce0c5c1fe8",
+                "reference": "2e23e14e13e0d12bf1b629da1961ffce0c5c1fe8",
                 "shasum": ""
             },
             "require": {
@@ -663,7 +663,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2014-09-03 20:35:23"
+            "time": "2014-09-04 19:34:19"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -671,12 +671,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "0bdbf0d9019adcf0ddf3e48284f34b1e8a7a72f4"
+                "reference": "309415f186e92365bce49daafeb902a5d4dead1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/0bdbf0d9019adcf0ddf3e48284f34b1e8a7a72f4",
-                "reference": "0bdbf0d9019adcf0ddf3e48284f34b1e8a7a72f4",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/309415f186e92365bce49daafeb902a5d4dead1b",
+                "reference": "309415f186e92365bce49daafeb902a5d4dead1b",
                 "shasum": ""
             },
             "require": {
@@ -704,7 +704,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2014-08-28 20:28:03"
+            "time": "2014-09-04 18:36:30"
         },
         {
             "name": "yiisoft/yii2-composer",
