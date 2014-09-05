@@ -19,7 +19,7 @@ class DefaultController extends Controller
         $behaviors['access']['rules'][] = [
             'allow' => true,
             'actions' => ['error'],
-            'roles' => ['?', '@']
+            'roles' => ['@']
         ];
 
         return $behaviors;
