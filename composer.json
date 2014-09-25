@@ -31,30 +31,10 @@
     "config": {
         "process-timeout": 1800
     },
-	"scripts": {
-		"post-create-project-cmd": [
-            "yii\\composer\\Installer::postCreateProject"
-		]
-	},
-	"extra": {
-        "yii\\composer\\Installer::postCreateProject": {
-            "setPermission": [
-                {
-                    "backend/runtime": "0777",
-                    "backend/web/assets": "0777",
-                    "console/runtime": "0777",
-                    "console/migrations": "0777",
-                    "frontend/runtime": "0777",
-                    "frontend/web/assets": "0777",
-                    "statics": "0777",
-                    "cache": "0777",
-                    "yii": "0755"
-                }
-            ],
-            "generateCookieValidationKey": [
-                "frontend/config/main.php",
-                "backend/config/main.php"
-            ]
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
         }
-	}
+    }
 }
