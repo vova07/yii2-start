@@ -28,9 +28,15 @@ If you do not have Composer, you may install it by following the instructions at
 6. Apply migrations with console commands:
    - `php yii migrate --migrationPath=@vova07/users/migrations`
    - `php yii migrate --migrationPath=@vova07/blogs/migrations`
+   - `php yii migrate --migrationPath=@vova07/comments/migrations`
    - This will create tables needed for the application to work.
    - You also can use database dump `db.sql` from `my/path/to/yii2-start/common/data`, but however I recommend to use migrations.
-7. Set document roots of your Web server:
+7. Run modules RBAC commands:
+   - `php yii rbac/rbac/init`
+   - `php yii users/rbac/add`
+   - `php yii blogs/rbac/add`
+   - `php yii comments/rbac/add`
+8. Set document roots of your Web server:
 
   **For Apache:**
     

@@ -10,7 +10,19 @@ return [
     'modules' => [
         'rbac' => [
             'class' => 'vova07\rbac\Module',
-            'controllerNamespace' => 'vova07\rbac\console\controllers'
+            'controllerNamespace' => 'vova07\rbac\commands'
+        ],
+        'users' => [
+            'class' => 'vova07\users\Module',
+            'controllerNamespace' => 'vova07\users\commands'
+        ],
+        'blogs' => [
+            'class' => 'vova07\blogs\Module',
+            'controllerNamespace' => 'vova07\blogs\commands'
+        ],
+        'comments' => [
+            'class' => 'vova07\comments\Module',
+            'controllerNamespace' => 'vova07\comments\commands'
         ]
     ],
     'components' => [

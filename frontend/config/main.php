@@ -7,7 +7,7 @@ return [
     'defaultRoute' => 'site/default/index',
     'modules' => [
         'site' => [
-            'class' => 'frontend\modules\site\Module'
+            'class' => 'vova07\site\Module'
         ],
         'blogs' => [
             'controllerNamespace' => 'vova07\blogs\controllers\frontend'
@@ -25,28 +25,7 @@ return [
             ]
         ],
         'view' => [
-            'theme' => [
-                'pathMap' => [
-                    '@frontend/views' => '@frontend/themes/site/views',
-                    '@frontend/modules' => '@frontend/themes/site/modules'
-                ]
-            ]
-        ],
-        'assetManager' => [
-            'bundles' => [
-                'yii\bootstrap\BootstrapAsset' => [
-                    'sourcePath' => '@frontend/themes/site',
-                    'css' => [
-                        'css/bootstrap.min.css'
-                    ]
-                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'sourcePath' => '@frontend/themes/site',
-                    'js' => [
-                        'js/bootstrap.min.js'
-                    ]
-                ]
-            ]
+            'theme' => 'vova07\themes\site\Theme'
         ],
         'errorHandler' => [
             'errorAction' => 'site/default/error'
@@ -57,19 +36,6 @@ return [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning']
-                ]
-            ]
-        ],
-        'i18n' => [
-            'translations' => [
-                'site' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@frontend/modules/site/messages',
-                    'forceTranslation' => true
-                ],
-                'themes*' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@frontend/themes/site/messages',
                 ]
             ]
         ]

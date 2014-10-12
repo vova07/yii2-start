@@ -9,7 +9,7 @@ return [
     'defaultRoute' => 'admin/default/index',
     'modules' => [
         'admin' => [
-            'class' => 'backend\modules\admin\Module'
+            'class' => 'vova07\admin\Module'
         ],
         'users' => [
             'controllerNamespace' => 'vova07\users\controllers\backend'
@@ -17,6 +17,13 @@ return [
         'blogs' => [
             'controllerNamespace' => 'vova07\blogs\controllers\backend'
         ],
+        'comments' => [
+            'isBackend' => true
+        ],
+        'rbac' => [
+            'class' => 'vova07\rbac\Module',
+            'isBackend' => true
+        ]
     ],
     'components' => [
         'request' => [
@@ -30,28 +37,7 @@ return [
             ]
         ],
         'view' => [
-            'theme' => [
-                'pathMap' => [
-                    '@backend/views' => '@backend/themes/admin/views',
-                    '@backend/modules' => '@backend/themes/admin/modules'
-                ]
-            ]
-        ],
-        'assetManager' => [
-            'bundles' => [
-                'yii\bootstrap\BootstrapAsset' => [
-                    'sourcePath' => '@backend/themes/admin',
-                    'css' => [
-                        'css/bootstrap.min.css'
-                    ]
-                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'sourcePath' => '@backend/themes/admin',
-                    'js' => [
-                        'js/bootstrap.min.js'
-                    ]
-                ]
-            ]
+            'theme' => 'vova07\themes\admin\Theme'
         ],
         'errorHandler' => [
             'errorAction' => 'admin/default/error'
@@ -62,19 +48,6 @@ return [
                 [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning']
-                ]
-            ]
-        ],
-        'i18n' => [
-            'translations' => [
-                'admin' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@backend/modules/admin/messages',
-                    'forceTranslation' => true
-                ],
-                'themes*' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@backend/themes/admin/messages',
                 ]
             ]
         ]

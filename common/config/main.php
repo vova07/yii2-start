@@ -9,6 +9,9 @@ return [
         ],
         'blogs' => [
             'class' => 'vova07\blogs\Module'
+        ],
+        'comments' => [
+            'class' => 'vova07\comments\Module'
         ]
     ],
     'components' => [
@@ -34,17 +37,15 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\PhpManager',
             'defaultRoles' => [
-                'user',
-                'admin',
-                'superadmin'
+                'user'
             ],
             'itemFile' => '@vova07/rbac/data/items.php',
             'assignmentFile' => '@vova07/rbac/data/assignments.php',
             'ruleFile' => '@vova07/rbac/data/rules.php',
         ],
         'formatter' => [
-            'dateFormat' => 'd.m.Y',
-            'datetimeFormat' => 'H:i:s d.m.Y'
+            'dateFormat' => 'dd.MM.y',
+            'datetimeFormat' => 'HH:mm:ss dd.MM.y'
         ],
         'db' => require(__DIR__ . '/db.php')
     ],
