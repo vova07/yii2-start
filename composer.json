@@ -23,7 +23,8 @@
 		"yiisoft/yii2-bootstrap": "*",
         "vova07/yii2-start-users-module": "*",
         "vova07/yii2-start-blogs-module": "*",
-        "vova07/yii2-select2-widget": "*"
+        "vova07/yii2-start-comments-module": "*",
+        "vova07/yii2-start-rbac-module": "*"
     },
     "require-dev": {
     	"yiisoft/yii2-debug": "*",
