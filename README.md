@@ -14,13 +14,12 @@ _Password:_ `demo12345`
 Installation and getting started:
 ---------------------------------
 
-If you do not have Composer, you may install it by following the instructions at getcomposer.org.
+**If you do not have Composer, you may install it by following the instructions at getcomposer.org.**
 
-1. Run the following commands to install Yii2-Start:  
-  ```
-  php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta3"  
-  php composer.phar create-project --prefer-dist --stability=dev vova07/yii2-start yii2-start
-  ```
+**If you do not have Composer-Asset-Plugin installed, you may install it by running command:** `php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta3"`
+
+1. Run the following commands to install Yii2-Start: `php composer.phar create-project --prefer-dist --stability=dev vova07/yii2-start yii2-start`  
+   **During the installation process can be required `password` and\or `username` from your Github account. This is because you make too much request to Github service. Just remember that this can be.**
 2. Run command: `cd /my/path/to/yii2-start/` and go to main application directory.
 3. Run command: `php requirements.php` and check the requirements.
 4. Run command: `php init` to initialize the application with a specific environment.
