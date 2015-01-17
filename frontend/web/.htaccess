@@ -1,5 +1,6 @@
 # Mod_Rewrite
 <IfModule mod_rewrite.c>
+    # Enable mod_rewrite
     RewriteEngine On
 
     # If a directory or a file exists, use the request directly
