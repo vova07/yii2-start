@@ -8,8 +8,8 @@ DEMO:
 **Backend:** [http://yii2-start.find-freelancer.pro/backend/](http://yii2-start.find-freelancer.pro/backend/)  
 
 **Authentication:**  
-_Login:_ `demo`  
-_Password:_ `demo12345`  
+_Login:_ `admin`  
+_Password:_ `admin12345`  
 
 Installation and getting started:
 ---------------------------------
