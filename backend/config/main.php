@@ -15,7 +15,7 @@ return [
             'controllerNamespace' => 'vova07\users\controllers\backend'
         ],
         'blogs' => [
-            'controllerNamespace' => 'vova07\blogs\controllers\backend'
+            'isBackend' => true
         ],
         'comments' => [
             'isBackend' => true
